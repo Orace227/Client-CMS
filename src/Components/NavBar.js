@@ -2,10 +2,10 @@ import { Disclosure } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import logo from "../Assests/logo.jpg";
 const navigation = [
-  { name: "Dashboard", href: "#", current: true },
-  { name: "Team", href: "#", current: false },
-  { name: "Projects", href: "#", current: false },
-  { name: "Calendar", href: "#", current: false },
+  { name: "Home", href: "#", current: true },
+  { name: "Packages", href: "#", current: false },
+  { name: "About Us", href: "#", current: false },
+  { name: "Contact Us", href: "#", current: false },
 ];
 
 function classNames(...classes) {
@@ -49,7 +49,7 @@ export default function Example() {
                           item.current
                             ? "bg-blue-900 text-white"
                             : "text-gray-900 hover:bg-blue-900 hover:text-white",
-                          "rounded-md px-3 py-2 text-sm font-medium"
+                          "rounded-md px-3 py-2 text-lg font-medium"
                         )}
                         aria-current={item.current ? "page" : undefined}
                       >
