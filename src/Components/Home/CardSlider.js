@@ -8,9 +8,16 @@ const CardSlider = () => {
   const fetchPackages = async (props) => {
     try {
       const response = await axios.get(`/GetCountries`);
+      // const allPackages = response.data.allCountries.map((Package) => ({
+      //   ...Package,
+      //   countryImgPath: `http://localhost:7000/${Package.countryImgPath.replace(
+      //     "\\",
+      //     "/"
+      //   )}`, // Decode HTML entities
+      // }));
       const allPackages = response.data.allCountries.map((Package) => ({
         ...Package,
-        countryImgPath: `http://localhost:7000/${Package.countryImgPath.replace(
+        countryImgPath: `https://travelling-cms-backend.onrender.com/${Package.countryImgPath.replace(
           "\\",
           "/"
         )}`, // Decode HTML entities
