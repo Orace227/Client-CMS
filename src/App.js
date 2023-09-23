@@ -1,6 +1,7 @@
 import axios from "axios";
 import "./App.css";
 import AllRoutes from "./Components/AllRoutes";
+import "./global.css";
 
 function App() {
   // axios.defaults.baseURL = "http://localhost:7000";

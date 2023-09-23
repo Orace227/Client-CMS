@@ -1,12 +1,19 @@
 import React from "react";
-import Navbar from "../NavBar";
-import CardSlider from "./CardSlider";
+import NavBar from "../NavBar";
+import CuratedDestinations from "./CuratedDestinations";
+import WellnessResorts from "./WellnessResorts";
+
+import Slider from "./Slider";
+import Footer from "../Footer";
 
 export default function HomePage() {
   return (
     <>
-      <Navbar />
-      <CardSlider Endpoint="GetCountries" />
+      <NavBar />
+      <Slider />
+      <CuratedDestinations Endpoint="GetCountries" />
+      <WellnessResorts Endpoint="GetCountries" />
+      <Footer />
     </>
   );
 }

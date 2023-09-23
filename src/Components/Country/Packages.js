@@ -12,18 +12,18 @@ const Packages = () => {
       // console.log(props.Endpoint);
       const response = await axios.get(`/GetPackages?country=${country}`);
       console.log("responce", response.data);
-      // const allPackages = response.data.allPackages?.map((Package) => ({
-      //   ...Package,
-      //   packageImgPath: `http://localhost:7000/${Package.packageImgPath
-      //     .replace("\\", "/")
-      //     .replace(/\s+/g, "")}`,
-      // }));
       const allPackages = response.data.allPackages?.map((Package) => ({
         ...Package,
-        packageImgPath: `https://travelling-cms-backend.onrender.com/${Package.packageImgPath
+        packageImgPath: `http://localhost:7000/${Package.packageImgPath
           .replace("\\", "/")
           .replace(/\s+/g, "")}`,
       }));
+      // const allPackages = response.data.allPackages?.map((Package) => ({
+      //   ...Package,
+      //   packageImgPath: `https://travelling-cms-backend.onrender.com/${Package.packageImgPath
+      //     .replace("\\", "/")
+      //     .replace(/\s+/g, "")}`,
+      // }));
 
       console.log(allPackages);
       setPackages(allPackages);
