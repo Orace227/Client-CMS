@@ -11,14 +11,14 @@ import {
   Grid,
 } from "@mui/material";
 
-const CuratedDestinations = () => {
+const CruiseVacations = () => {
   const [showMore, setShowMore] = useState(false);
   const [packages, setPackages] = useState([]);
 
   const fetchPackages = async () => {
     try {
       const response = await axios.get(
-        `/GetPackages?packageType=Wellness Resorts`
+        `/GetPackages?packageType=Cruise Vacations`
       );
       const allPackages = response.data.allPackages.map((Package) => ({
         ...Package,
@@ -44,7 +44,7 @@ const CuratedDestinations = () => {
       <div className="w-full flex">
         <div className="w-[300px]">
           <div className="ml-3 w-[160%] text-3xl md:text-4xl flex justify-start font-bold">
-            <h1>Wellness Resorts</h1>
+            <h1>Cruise Vacations</h1>
           </div>
           <div
             className="ml-4 mt-1 text-gray-500 w-[200px] md:w-[400px]"
@@ -95,4 +95,4 @@ const CuratedDestinations = () => {
   );
 };
 
-export default CuratedDestinations;
+export default CruiseVacations;

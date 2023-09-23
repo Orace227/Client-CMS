@@ -6,20 +6,18 @@ import {
   IconButton,
 } from "@material-tailwind/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
-import logo from "../Assests/logo.png";
+import logo from "../Assests/Logo1.png";
+import logo2Text from "../Assests/logo2Text.png";
 function NavList() {
   return (
     <ul className="my-2 flex flex-col gap-2 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6">
-<Typography
+      <Typography
         as="li"
         variant="large"
         color="blue-gray"
-        className="p-2 font-bold transition transform hover:text-white hover:bg-blue-900 rounded-lg hover:scale-105 hover:shadow-lg"
+        className="p-2 font-bold text-lg transition transform hover:text-white hover:bg-blue-900 rounded-lg hover:scale-105 hover:shadow-lg"
       >
-        <a
-          href="#"
-          className="flex items-center  transition-colors"
-        >
+        <a href="#" className="flex items-center  transition-colors">
           Home
         </a>
       </Typography>
@@ -27,12 +25,9 @@ function NavList() {
         as="li"
         variant="large"
         color="blue-gray"
-        className="p-2 font-bold transition transform hover:text-white hover:bg-blue-900 rounded-lg hover:scale-105 hover:shadow-lg"
+        className="p-2 font-bold text-lg transition transform hover:text-white hover:bg-blue-900 rounded-lg hover:scale-105 hover:shadow-lg"
       >
-        <a
-          href="#"
-          className="flex items-center  transition-colors"
-        >
+        <a href="#" className="flex items-center  transition-colors">
           Destinations
         </a>
       </Typography>
@@ -40,12 +35,9 @@ function NavList() {
         as="li"
         variant="large"
         color="blue-gray"
-        className="p-2 font-bold transition transform hover:text-white hover:bg-blue-900 rounded-lg hover:scale-105 hover:shadow-lg"
+        className="p-2 font-bold text-lg transition transform hover:text-white hover:bg-blue-900 rounded-lg hover:scale-105 hover:shadow-lg"
       >
-        <a
-          href="#"
-          className="flex items-center  transition-colors"
-        >
+        <a href="#" className="flex items-center  transition-colors">
           About Us
         </a>
       </Typography>
@@ -53,12 +45,9 @@ function NavList() {
         as="li"
         variant="large"
         color="blue-gray"
-        className="p-2 font-bold transition transform hover:text-white hover:bg-blue-900 rounded-lg hover:scale-105 hover:shadow-lg"
+        className="p-2 font-bold text-lg transition transform hover:text-white hover:bg-blue-900 rounded-lg hover:scale-105 hover:shadow-lg"
       >
-        <a
-          href="#"
-          className="flex items-center  transition-colors"
-        >
+        <a href="#" className="flex items-center transition-colors">
           Contact Us
         </a>
       </Typography>
@@ -81,15 +70,16 @@ export default function NavBar() {
   }, []);
 
   return (
-    <Navbar className="mx-auto px-6 py-3 shadow-none  z-10 bg-transparent border-none">
+    <Navbar className=" px-6 max-w-screen-3xl py-2 shadow-none bg-gray-400 rounded-none border-none">
       <div className=" flex items-center justify-between text-blue-gray-900">
         <Typography
           as="a"
           href="#"
           variant="h6"
-          className="mr-4 cursor-pointer py-1.5"
+          className="mr-4 cursor-pointer py-1.5 flex items-center"
         >
-          <img src={logo} style={{ height: "80px" }} />
+          <img src={logo} style={{ height: "50px" }} />
+          <img src={logo2Text} style={{ height: "35px", marginTop: "10px" }} />
         </Typography>
         <div className="hidden lg:block">
           <NavList />

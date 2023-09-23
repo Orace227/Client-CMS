@@ -46,7 +46,7 @@ const CuratedDestinations = () => {
           </div>
           <div
             className="ml-4 mt-1 text-gray-500 w-[200px] md:w-[400px]"
-            style={{ lineHeight: "1.2", }}
+            style={{ lineHeight: "1.2" }}
           >
             <span>Vacations to make your experience enjoyable!</span>
           </div>
@@ -54,7 +54,7 @@ const CuratedDestinations = () => {
         <div className=" w-full flex justify-end items-end">
           <button
             onClick={() => setShowMore(!showMore)}
-            className="hover:bg-blue-800 mr-4 hover:text-white text-black font-bold py-2 px-1 rounded flex items-center"
+            className="hover:bg-blue-800 mr-4 hover:text-white text-black font-bold my-2 py-2 px-1 rounded flex items-center"
           >
             {showMore ? "Explore Less" : "Explore More"}
             <IconPlus size={20} />
