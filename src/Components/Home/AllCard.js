@@ -13,9 +13,16 @@ const AllCard = (props) => {
       const response = await axios.get(
         `/GetPackages?packageType=${props.packageType}&isLive=true`
       );
+      // const allPackages = response.data.allPackages.map((Package) => ({
+      //   ...Package,
+      //   packageImgPath: `http://localhost:7000/${Package.packageImgPath.replace(
+      //     "\\",
+      //     "/"
+      //   )}`,
+      // }));
       const allPackages = response.data.allPackages.map((Package) => ({
         ...Package,
-        packageImgPath: `http://localhost:7000/${Package.packageImgPath.replace(
+        packageImgPath: `https://travelling-cms-backend.onrender.com/${Package.packageImgPath.replace(
           "\\",
           "/"
         )}`,
