@@ -1,0 +1,29 @@
+.client-logo1 {
+  /* width: 100px; Set the desired width */
+  display: block; /* Remove any potential spacing */
+  margin: 0 10px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  filter: grayscale(100%); /* Make logos black and white by default */
+  transition: filter 0.3s ease-in-out;
+}
+
+.client-logo1:hover {
+  filter: none; /* Remove grayscale filter on hover to show original colors */
+}
+
+.client-name {
+  display: block;
+  margin-top: 8px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.client-logos-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+

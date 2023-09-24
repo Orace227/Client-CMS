@@ -1,23 +1,27 @@
 import React from "react";
 import NavBar from "../NavBar";
-import CuratedDestinations from "./CuratedDestinations";
-import WellnessResorts from "./WellnessResorts";
-
 import Slider from "./Slider";
 import Footer from "../Footer";
-import CruiseVacations from "./CruiseVacations";
 import WhyChooseUs from "./WhyChooseUs";
+import ClientLogos from "./ClientLogos";
+import AllCard from "./AllCard";
+import Testimonials from "./Testimonials";
 
 export default function HomePage() {
   return (
     <>
       <NavBar />
       <Slider />
-      <CuratedDestinations />
-      <WellnessResorts />
-      <CruiseVacations />
+      <AllCard packageType="destination" title="Curated Destinations" />
+      <AllCard packageType="Wellness Resorts" title="Wellness Resorts" />
+      <AllCard packageType="Cruise Vacations" title="Cruise Vacations" />
+
       <WhyChooseUs />
-      <Footer />
+      <AllCard packageType="Wildlife Drives" title="Wildlife Drives" />
+      <AllCard packageType="Sustainable paths" title="Sustainable Paths" />
+      <ClientLogos />
+      <Testimonials />
+      {/* <Footer /> */}
     </>
   );
 }
