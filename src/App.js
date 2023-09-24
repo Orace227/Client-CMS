@@ -6,6 +6,7 @@ function App() {
   // axios.defaults.baseURL = "http://localhost:7000";
   axios.defaults.baseURL = "https://travelling-cms-backend.onrender.com";
   return (
+    
     <>
       <AllRoutes />
     </>
