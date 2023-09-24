@@ -6,6 +6,8 @@ import WhyChooseUs from "./WhyChooseUs";
 import ClientLogos from "./ClientLogos";
 import AllCard from "./AllCard";
 import Testimonials from "./Testimonials";
+import WeOffer from "./WeOffer";
+import "../../global.css";
 
 export default function HomePage() {
   return (
@@ -19,9 +21,10 @@ export default function HomePage() {
       <WhyChooseUs />
       <AllCard packageType="Wildlife Drives" title="Wildlife Drives" />
       <AllCard packageType="Sustainable paths" title="Sustainable Paths" />
+      <WeOffer />
       <ClientLogos />
       <Testimonials />
-      {/* <Footer /> */}
+      <Footer />
     </>
   );
 }

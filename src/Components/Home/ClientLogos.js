@@ -17,15 +17,17 @@ const ClientLogos = () => {
   ];
 
   return (
-    <section className="bg-gray-100 ">
+    <section className="bg-gray-200 py-5  pb-8">
       <Container>
         <Typography align="center" gutterBottom>
-          <div className="mt-10 p-4 text-2xl sm:text-3xl md:text-4xl ">Our Clients</div>
+          <div className="p-4  text-2xl sm:text-3xl md:text-4xl ">
+            Our Clients
+          </div>
         </Typography>
-        <div className="client-logos-container">
+        <div className="client-logos-container ">
           {clientLogos.map((client, index) => (
             <img
-              className="client-logo1 w-[50px] ml-3 mr-3 sm:w-[100px] lg:w-[130px]"
+              className="client-logo1 mx-[10px] sm:mx-[5px] md:mx-[20px] lg:mx-[30px] w-[50px] sm:w-[100px] lg:w-[130px]"
               src={client.imageUrl}
               alt={client.name}
               key={index}

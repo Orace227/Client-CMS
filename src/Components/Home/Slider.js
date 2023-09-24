@@ -20,28 +20,28 @@ export default function Slider() {
         <img
           src={img1}
           alt="image 1"
-          className="h-[629px] w-full object-cover"
+          className="h-[624px] w-full object-cover"
         />
       </div>
       <div>
         <img
           src={img2}
           alt="image 2"
-          className="h-[629px] w-full object-cover"
+          className="h-[624px] w-full object-cover"
         />
       </div>
       <div>
         <img
           src={img3}
           alt="image 3"
-          className="h-[629px] w-full object-cover"
+          className="h-[624px] w-full object-cover"
         />
       </div>
       <div>
         <img
           src={img4}
           alt="image 4"
-          className="h-[629px] w-full object-cover "
+          className="h-[624px] w-full object-cover "
         />
       </div>
     </Carousel>

@@ -8,6 +8,7 @@ import {
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import logo from "../Assests/Logo1.png";
 import logo2Text from "../Assests/logo2Text.png";
+import { Link } from "react-router-dom";
 function NavList() {
   return (
     <ul className="my-2 flex flex-col gap-2 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6">
@@ -15,17 +16,17 @@ function NavList() {
         as="li"
         variant="large"
         color="blue-gray"
-        className="p-2 font-bold text-lg transition transform hover:text-white hover:bg-blue-900 rounded-lg hover:scale-105 hover:shadow-lg"
+        className="p-2 font-bold text-lg transition transform hover:text-white hover:bg-blue-900 rounded-lg lg:hover:scale-105 hover:shadow-lg"
       >
-        <a href="#" className="flex items-center  transition-colors">
+        <Link to="/" className="flex items-center transition-colors">
           Home
-        </a>
+        </Link>
       </Typography>
       <Typography
         as="li"
         variant="large"
         color="blue-gray"
-        className="p-2 font-bold text-lg transition transform hover:text-white hover:bg-blue-900 rounded-lg hover:scale-105 hover:shadow-lg"
+        className="p-2 font-bold text-lg transition transform hover:text-white hover:bg-blue-900 rounded-lg lg:hover:scale-105 hover:shadow-lg"
       >
         <a href="#" className="flex items-center  transition-colors">
           Destinations
@@ -35,7 +36,7 @@ function NavList() {
         as="li"
         variant="large"
         color="blue-gray"
-        className="p-2 font-bold text-lg transition transform hover:text-white hover:bg-blue-900 rounded-lg hover:scale-105 hover:shadow-lg"
+        className="p-2 font-bold text-lg transition transform hover:text-white hover:bg-blue-900 rounded-lg lg:hover:scale-105 hover:shadow-lg"
       >
         <a href="#" className="flex items-center  transition-colors">
           About Us
@@ -45,7 +46,7 @@ function NavList() {
         as="li"
         variant="large"
         color="blue-gray"
-        className="p-2 font-bold text-lg transition transform hover:text-white hover:bg-blue-900 rounded-lg hover:scale-105 hover:shadow-lg"
+        className="p-2 font-bold text-lg transition transform hover:text-white hover:bg-blue-900 rounded-lg lg:hover:scale-105 hover:shadow-lg"
       >
         <a href="#" className="flex items-center transition-colors">
           Contact Us
@@ -70,7 +71,7 @@ export default function NavBar() {
   }, []);
 
   return (
-    <div className="sticky top-0 z-50 bg-opacity-60 backdrop-blur-lg py-2">
+    <div className="sticky -top-2 z-50 bg-opacity-60 backdrop-blur-lg py-2">
       <Navbar className="px-6 max-w-screen-3xl py-2 shadow-none rounded-none border-none">
         <div className="flex items-center justify-between text-blue-gray-900">
           <Typography

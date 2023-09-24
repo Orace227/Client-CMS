@@ -2,9 +2,9 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { IconPlus } from "@tabler/icons-react";
 import { Card, CardContent, CardMedia, Typography, Grid } from "@mui/material";
+import { Link } from "react-router-dom";
 
 const AllCard = (props) => {
-  const [showMore, setShowMore] = useState(false);
   const [packages, setPackages] = useState([]);
   const [error, setError] = useState(null);
 
@@ -37,10 +37,10 @@ const AllCard = (props) => {
     fetchPackages();
   }, []);
 
-  const numPackagesToShow = showMore ? packages.length : 4;
+  const numPackagesToShow = 4;
 
   return (
-    <div className="flex mt-10 flex-wrap md:ml-16 md:mr-16">
+    <div className="flex mt-16 flex-wrap md:ml-16 md:mr-16">
       <div className="w-full flex">
         <div className="w-[300px]">
           <div className="ml-3 w-[160%] text-3xl md:text-4xl flex justify-start font-bold">
@@ -54,13 +54,12 @@ const AllCard = (props) => {
           </div>
         </div>
         <div className=" w-full flex justify-end items-end">
-          <button
-            onClick={() => setShowMore(!showMore)}
-            className="hover:bg-blue-800 mr-4 hover:text-white text-black font-bold my-2 py-2 px-1 rounded flex items-center"
-          >
-            {showMore ? "Explore Less" : "Explore More"}
-            <IconPlus size={20} />
-          </button>
+          <Link to={`/Countries`}>
+            <button className="hover:bg-blue-800 mr-4 hover:text-white text-black font-bold my-2 py-2 px-1 rounded flex items-center">
+              {"Explore More"}
+              <IconPlus size={20} />
+            </button>
+          </Link>
         </div>
       </div>
 
@@ -78,22 +77,26 @@ const AllCard = (props) => {
                 className="mt-4 ml-5 mr-5 sm:ml-2 sm:mr-2"
                 style={{ boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)" }}
               >
-                <CardMedia
-                  style={{ height: "200px" }}
-                  component="img"
-                  alt={card.packageName}
-                  image={card.packageImgPath}
-                />
-                <CardContent>
-                  <Typography component="div">
-                    <div className="font-bold text-xl">{card.packageName}</div>
-                  </Typography>
-                  <Typography component="div">
-                    <div className="text-gray-700 font-light">
-                      {card.packageDesc}
-                    </div>
-                  </Typography>
-                </CardContent>
+                <Link to={`/Package/${card.PackageId}`}>
+                  <CardMedia
+                    style={{ height: "200px" }}
+                    component="img"
+                    alt={card.packageName}
+                    image={card.packageImgPath}
+                  />
+                  <CardContent>
+                    <Typography component="div">
+                      <div className="font-bold text-xl">
+                        {card.packageName}
+                      </div>
+                    </Typography>
+                    <Typography component="div">
+                      <div className="text-gray-700 font-light">
+                        {card.packageDesc}
+                      </div>
+                    </Typography>
+                  </CardContent>
+                </Link>
               </Card>
             </Grid>
           ))}

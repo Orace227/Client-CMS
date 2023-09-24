@@ -1,34 +1,31 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
+import { Card, CardContent, CardMedia, Typography, Grid } from "@mui/material";
 
-import { useParams } from "react-router-dom";
 const Packages = () => {
-  const [packages, setPackages] = useState([]);
-  const { country } = useParams();
+  const [countries, setCountries] = useState([]);
 
   const fetchCountries = async () => {
     try {
-      // console.log(props.Endpoint);
-      const response = await axios.get(`/GetPackages?country=${country}`);
-      console.log("responce", response.data);
-      const allPackages = response.data.allPackages?.map((Package) => ({
-        ...Package,
-        packageImgPath: `http://localhost:7000/${Package.packageImgPath
+      const response = await axios.get(`/GetCountries`);
+      console.log("response", response.data);
+      const allCountries = response.data.allCountries?.map((country) => ({
+        ...country,
+        countryImgPath: `http://localhost:7000/${country.countryImgPath
           .replace("\\", "/")
           .replace(/\s+/g, "")}`,
       }));
-      // const allPackages = response.data.allPackages?.map((Package) => ({
-      //   ...Package,
-      //   packageImgPath: `https://travelling-cms-backend.onrender.com/${Package.packageImgPath
-      //     .replace("\\", "/")
-      //     .replace(/\s+/g, "")}`,
-      // }));
 
-      console.log(allPackages);
-      setPackages(allPackages);
+      // Sort the countries alphabetically by name
+      const sortedCountries = allCountries.sort((a, b) => {
+        return a.countryName.localeCompare(b.countryName);
+      });
+
+      console.log(sortedCountries);
+      setCountries(sortedCountries);
     } catch (error) {
-      console.error("Error fetching packages:", error);
+      console.error("Error fetching countries:", error);
     }
   };
 
@@ -36,31 +33,58 @@ const Packages = () => {
     fetchCountries();
   }, []);
 
+  // Create an object to group countries by continent
+  const countriesByContinent = {};
+  countries.forEach((country) => {
+    if (!countriesByContinent[country.continent]) {
+      countriesByContinent[country.continent] = [];
+    }
+    countriesByContinent[country.continent].push(country);
+  });
+
   return (
-    <div className="flex flex-wrap md:ml-16 md:mr-16">
-      <div className="w-full text-2xl md:text-4xl flex justify-center font-bold text-blue-900">
-        <h1>
-          All Packages of {country.charAt(0).toUpperCase() + country.slice(1)}
-        </h1>
+    <div className="flex  flex-wrap md:ml-16 md:mr-16">
+      <div className="w-full flex">
+        <div className="w-full">
+          <div className="ml-3 w-full text-3xl md:text-4xl flex justify-center font-bold">
+            <h1>All Packages</h1>
+          </div>
+        </div>
       </div>
 
-      {packages?.map((card) => (
-        <div
-          key={card._id}
-          className="flex mt-8 w-full sm:w-1/2 md:w-1/2 lg:w-1/3 xl:w-1/4 px-4 mb-4"
-        >
-          <div
-            className="relative w-full h-64 bg-white rounded-lg shadow-xl p-4"
-            style={{
-              backgroundImage: `url(${card.packageImgPath})`,
-              backgroundSize: "cover",
-              backgroundPosition: "center",
-            }}
-          >
-            <h2 className="text-3xl font-semibold w-[280px] truncate text-blue-900 absolute bottom-7">
-              {card.packageName}
-            </h2>
-          </div>
+      {Object.keys(countriesByContinent).map((continent, index) => (
+        <div key={continent} className="w-full mt-4">
+          <Typography variant="h4" className="ml-2  mb-2">
+            <div className="mt-10">
+              {index + 1}.{continent}
+            </div>
+          </Typography>
+          <Grid container spacing={3}>
+            {countriesByContinent[continent].map((country) => (
+              <Grid item xs={12} sm={6} md={4} lg={3} key={country._id}>
+                <Card
+                  className="mt-4 ml-5 mr-5 sm:ml-2 sm:mr-2"
+                  style={{ boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)" }}
+                >
+                  <Link to={`/Countries`}>
+                    <CardMedia
+                      style={{ height: "200px" }}
+                      component="img"
+                      alt={country.countryImgPath}
+                      image={country.countryImgPath}
+                    />
+                    <CardContent>
+                      <Typography component="div">
+                        <div className="font-bold text-xl">
+                          {country.countryName}
+                        </div>
+                      </Typography>
+                    </CardContent>
+                  </Link>
+                </Card>
+              </Grid>
+            ))}
+          </Grid>
         </div>
       ))}
     </div>
