@@ -7,7 +7,7 @@ import ClientLogos from "./ClientLogos";
 import AllCard from "./AllCard";
 import Testimonials from "./Testimonials";
 import WeOffer from "./WeOffer";
-import "../../global.css";
+import "./global.css";
 
 export default function HomePage() {
   return (

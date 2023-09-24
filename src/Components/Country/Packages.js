@@ -10,13 +10,19 @@ const Packages = () => {
     try {
       const response = await axios.get(`/GetCountries`);
       console.log("response", response.data);
+      // const allCountries = response.data.allCountries?.map((country) => ({
+      //   ...country,
+      //   countryImgPath: `http://localhost:7000/${country.countryImgPath
+      //     .replace("\\", "/")
+      //     .replace(/\s+/g, "")}`,
+      // }));
+
       const allCountries = response.data.allCountries?.map((country) => ({
         ...country,
-        countryImgPath: `http://localhost:7000/${country.countryImgPath
+        countryImgPath: `https://travelling-cms-backend.onrender.com/${country.countryImgPath
           .replace("\\", "/")
           .replace(/\s+/g, "")}`,
       }));
-
       // Sort the countries alphabetically by name
       const sortedCountries = allCountries.sort((a, b) => {
         return a.countryName.localeCompare(b.countryName);
@@ -46,7 +52,7 @@ const Packages = () => {
     <div className="flex  flex-wrap md:ml-16 md:mr-16">
       <div className="w-full flex">
         <div className="w-full">
-          <div className="ml-3 w-full text-3xl md:text-4xl flex justify-center font-bold">
+          <div className="ml-3 mt-5 text-4xl md:text-4xl flex justify-center font-bold">
             <h1>All Packages</h1>
           </div>
         </div>
@@ -55,7 +61,7 @@ const Packages = () => {
       {Object.keys(countriesByContinent).map((continent, index) => (
         <div key={continent} className="w-full mt-4">
           <Typography variant="h4" className="ml-2  mb-2">
-            <div className="mt-10">
+            <div className="mt-10 ml-6">
               {index + 1}.{continent}
             </div>
           </Typography>

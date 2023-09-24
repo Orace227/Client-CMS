@@ -56,7 +56,7 @@ function NavList() {
   );
 }
 
-export default function NavBar() {
+export default function NavBar(props) {
   const [openNav, setOpenNav] = React.useState(false);
 
   const handleWindowResize = () =>
@@ -107,6 +107,7 @@ export default function NavBar() {
           <NavList />
         </Collapse>
       </Navbar>
+      {props.border == "true" && <hr />}
     </div>
   );
 }

@@ -6,7 +6,7 @@ import Footer from "../Footer";
 export default function CountryPage() {
   return (
     <>
-      <Navbar />
+      <Navbar border="true" />
       <Packages />
       <Footer />
     </>

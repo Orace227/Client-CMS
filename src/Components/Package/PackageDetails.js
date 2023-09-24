@@ -1,21 +1,59 @@
-import React, { useState } from "react";
-import TourImage from "../../Assests/img3.jpg";
+import React, { useEffect, useState } from "react";
 import "./Package.css"; // Import your CSS file for styling
+import axios from "axios";
 
 function PackageDetails(props) {
-  const [hoverDiv, setHoverDiv] = useState(1);
+  const [hoverDiv, setHoverDiv] = useState(0);
+  const [Package, setPackage] = useState([]);
 
   const handleButtonClick = (index) => {
     setHoverDiv(index);
   };
 
+  const fetchPackageDetails = async () => {
+    try {
+      const res = await axios.get(`/GetPackages?PackageId=${props.packageId}`);
+      console.log("package data", res.data);
+      // const PackageData = res.data.allPackages.map((Package) => ({
+      //   ...Package,
+      //   packageImgPath: `http://localhost:7000/${Package.packageImgPath.replace(
+      //     "\\",
+      //     "/"
+      //   )}`,
+      // }));
+      const PackageData = res.data.allPackages.map((Package) => ({
+        ...Package,
+        packageImgPath: `https://travelling-cms-backend.onrender.com/${Package.packageImgPath.replace(
+          "\\",
+          "/"
+        )}`,
+      }));
+      console.log(PackageData);
+      setPackage(PackageData);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  useEffect(() => {
+    // window.scrollTo({
+    //   top: 0,
+    //   behavior: "smooth",
+    // });
+    fetchPackageDetails();
+  }, []);
+
   return (
     <div className="package-details-container">
       <header>
-        <div className="header-image-container">
-          <img src={TourImage} className="header-image" alt="Tour" />
+        <div className="header-image-container ">
+          <img
+            src={Package[0]?.packageImgPath}
+            className="header-image"
+            alt="Tour"
+          />
         </div>
-        <nav className="nav-container">
+        <nav className="nav-container mt-5">
           <div className="nav-items">
             <div
               className={`nav-item ${
@@ -53,70 +91,18 @@ function PackageDetails(props) {
         </nav>
       </header>
       <section>
-        <div className={`section-container ${hoverDiv === 0 ? "active" : ""} `}>
+        <div className={`section-container ${hoverDiv === 0 ? "active" : ""}`}>
           <div className="content">
-            <h3>Day 1: Arrive Tokyo</h3>
-            <p>
-              AM/PM Arrival Transfer by shared Limousine bus to hotel.
-              <br />
-              Check in to Hotel at 3 PM.
-              <br />
-              Overnight at hotel (Tokyo Hotel).
-            </p>
-
-            <h3>Day 2: Tokyo Afternoon (B)</h3>
-            <p>
-              Pick-up Service.
-              <br />
-              Gather at designated locations (hotels in Tokyo) and board the bus
-              bound for Hamamatsu Cho Bus Terminal.
-              <br />
-              <br />
-              13:40 - Hamamatsucho Bus Terminal.
-              <br />
-              Walk to the World Trade Center Building from Hamamatsucho Bus
-              Terminal and visit the observation deck.
-              <br />
-              Seaside Top (observation deck) (20 min).
-              <br />
-              Enjoy a panoramic view of Tokyo's bay area from a height of 152
-              meters.
-              <br />
-              Imperial Palace Plaza (10 min).
-              <br />
-              Admire the view at this National Garden that was formerly a
-              private garden of the Royal Family. Enjoy the view of Nijubashi
-              Bridge, which is said to be the face of the Imperial Palace, as
-              well as the view of the Imperial Palace itself.
-              <br />
-              Ginza (drive-by).
-              <br />
-              From the window get a look at Ginza, where rows of luxury brand
-              shops, and recently fast fashion retailers, line the streets.
-              <br />
-              Senso-ji Temple & Nakamise Shopping Street (45 min).
-              <br />
-              Senso-ji, Tokyo's oldest temple, offers plenty to see including
-              the bright red Kaminarimon Gate, a statue of the god of thunder,
-              and a five-story pagoda. The bustling street known as "Nakamise"
-              stretches for about 250m from Kaminarimon Gate to Senso-ji Temple
-              and is filled with a plethora of shops.
-              <br />
-              Asakusa Boat Cruise Sumida River Cruise (40 min).
-              <br />
-              Cruise around modern-day Tokyo and experience the atmosphere of
-              Edo.
-              <br />
-              Sumida River Cruise may be unavailable without prior notice due to
-              river conditions. Changes in the itinerary will be provided by the
-              guide. As the schedule of Sumida River Cruise will be altered
-              during cherry blossom season (expected period: mid-March to early
-              April), arrival time may be delayed.
-              <br />
-              Overnight at hotel (Tokyo Hotel).
-            </p>
-
-            {/* More days can be added here */}
+            {/* Render Tour Details */}
+            {Package[0]?.packageBody?.tourDetails?.map((tourDetail, index) => (
+              <div key={index}>
+                <div className="text-2xl mb-2">
+                  {`day ${index + 1}`} : {"  "}
+                  <span>{tourDetail.title}</span>
+                </div>
+                <p className="ml-5"> {tourDetail.description}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -124,31 +110,30 @@ function PackageDetails(props) {
       <section>
         <div className={`section-container ${hoverDiv === 1 ? "active" : ""}`}>
           <div className="content">
-            {/* Content for Inclusions & Exclusions */}
-            <h3>Inclusions</h3>
+            <h3 className="text-3xl mb-3">Inclusions</h3>
             <p>
-              • 04 nights Accommodation <br />• English speaking guide during
-              sightseeing on sic basis tour only
-              <br />• Meals: breakfast only basis
-              <br />• Transportation: a/c coach
-              <br />• Entrance tkt: all-inclusive as per itinerary
+              {Package[0]?.packageBody?.inclusionsAndExclusions?.inclusions.map(
+                (inclusion, index) => (
+                  <span key={index}>
+                    <div className="ml-5  font-thin">
+                      {index + 1}. {inclusion}
+                    </div>
+                  </span>
+                )
+              )}
             </p>
 
-            <h3>Exclusions</h3>
+            <h3 className="text-3xl mt-5 mb-3">Exclusions</h3>
             <p>
-              • Return airfare (International & Domestic) <br />
-              • Visa Charges <br />
-              • Travel Insurance <br />
-              • Gratuities/Tipping. <br />
-              • Any meals other than mentioned in itinerary <br />• Camera
-              charges, water bottle or any expense of personal nature <br />•
-              Entry fees to monuments and places other than package inclusion.{" "}
-              <br />
-              • Anything not mentioned in the package inclusions. <br />• Porter
-              age at hotels and airports, tips, laundry, liquors, wine. <br />
-              • All items of personal nature. <br />• Any cost arising due to
-              natural calamities like landslides, roadblocks, earthquakes and
-              any situation beyond company control. <br />
+              {Package[0]?.packageBody?.inclusionsAndExclusions?.exclusions.map(
+                (exclusion, index) => (
+                  <span key={index}>
+                    <div className="ml-5">
+                      {index + 1}. {exclusion}
+                    </div>
+                  </span>
+                )
+              )}
             </p>
           </div>
         </div>
@@ -156,49 +141,35 @@ function PackageDetails(props) {
       <section>
         <div className={`section-container ${hoverDiv === 2 ? "active" : ""}`}>
           <div className="content">
-            <h3>Terms & Conditions</h3>
+            <h3 className="text-3xl mb-3">Terms</h3>
             <p>
-              • For Package Quote, Hotels Room Category Will Be In Base Category
-              Only Unless Specified.
-              <br />
-              • Cancellation Policy Will Be Applicable As Per Hotel &
-              Transporter’s Terms & Conditions Only. General Cancellation Policy
-              Will Be As Follows:
-              <br />
-              <span className="font-semibold">
-                45 days prior to arrival: 10% of the tour / service cost.
-                <br />
-                15 days prior to arrival: 25% of the tour / service cost.
-                <br />
-                07 days prior to arrival: 50% of the tour / service cost.
-                <br />
-                48 hours prior to arrival or no-show: no refund.
-                <br />
-              </span>
-              • Written Cancellation Will Be Accepted On All Working Days,
-              Except Sundays. Any Cancellation Sent On Sundays Will Be
-              Considered On The Next Working Day (Monday).
-              <br />
-              • Child Above 12 Years Will Be Considered As An Adult.
-              <br />
-              • Any Cost Arising Due To Unforeseen Contingencies Such As Any
-              Pandemic Situation, Flight Cancellations, Landslides, Road
-              Blockages, Political Disturbances (Strikes), Etc. Such Expenses
-              Will Have To Be Paid Directly.
-              <br />
-              • Payment Terms: 50% Payment For Confirmation & Balance 50%
-              Payment Before 20 Days Prior To The Departure Date. If Service
-              Falls Within 20 Days, Then 100% Advance Payment Is Required At The
-              Time Of Confirmation.
-              <br />
-              • Hotel Room Confirmation Is Subject To Availability.
-              <br />
-              • If The Quoted Hotels Are Not Available, Similar Hotel Options
-              Will Be Offered.
-              <br />
-              • Hotel Check-In & Check-Out Policy Will Be Applicable. Rooms Will
-              Not Be Allotted Before Check-In Timings Of The Hotel.
-              <br />
+              {Package[0]?.packageBody?.termsAndConditions?.terms.map(
+                (term, index) => (
+                  <span key={index}>
+                    <div className="ml-5 my-2">
+                      {index + 1}. {"  "}
+                      {term}
+                      {/* <br /> */}
+                    </div>
+                  </span>
+                )
+              )}
+            </p>
+
+            <h3 className="text-3xl mt-7 mb-3">Conditions</h3>
+
+            <p>
+              {Package[0]?.packageBody?.termsAndConditions?.conditions.map(
+                (condition, index) => (
+                  <span key={index}>
+                    <div className="ml-5 my-2">
+                      {index + 1}. {"  "}
+                      {condition}
+                      {/* <br /> */}
+                    </div>
+                  </span>
+                )
+              )}
             </p>
           </div>
         </div>
