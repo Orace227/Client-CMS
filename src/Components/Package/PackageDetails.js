@@ -93,14 +93,13 @@ function PackageDetails(props) {
       <section>
         <div className={`section-container ${hoverDiv === 0 ? "active" : ""}`}>
           <div className="content">
-            {/* Render Tour Details */}
             {Package[0]?.packageBody?.tourDetails?.map((tourDetail, index) => (
               <div key={index}>
                 <div className="text-2xl mb-2">
                   {`day ${index + 1}`} : {"  "}
                   <span>{tourDetail.title}</span>
                 </div>
-                <p className="ml-5"> {tourDetail.description}</p>
+                <p className="ml-5 mb-5"> {tourDetail.description}</p>
               </div>
             ))}
           </div>

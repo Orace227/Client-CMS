@@ -10,19 +10,19 @@ const Packages = () => {
     try {
       const response = await axios.get(`/GetCountries`);
       console.log("response", response.data);
-      // const allCountries = response.data.allCountries?.map((country) => ({
-      //   ...country,
-      //   countryImgPath: `http://localhost:7000/${country.countryImgPath
-      //     .replace("\\", "/")
-      //     .replace(/\s+/g, "")}`,
-      // }));
-
       const allCountries = response.data.allCountries?.map((country) => ({
         ...country,
-        countryImgPath: `https://travelling-cms-backend.onrender.com/${country.countryImgPath
+        countryImgPath: `http://localhost:7000/${country.countryImgPath
           .replace("\\", "/")
           .replace(/\s+/g, "")}`,
       }));
+
+      // const allCountries = response.data.allCountries?.map((country) => ({
+      //   ...country,
+      //   countryImgPath: `https://travelling-cms-backend.onrender.com/${country.countryImgPath
+      //     .replace("\\", "/")
+      //     .replace(/\s+/g, "")}`,
+      // }));
       // Sort the countries alphabetically by name
       const sortedCountries = allCountries.sort((a, b) => {
         return a.countryName.localeCompare(b.countryName);
