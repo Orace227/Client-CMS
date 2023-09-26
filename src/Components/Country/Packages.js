@@ -10,19 +10,19 @@ const Packages = () => {
     try {
       const response = await axios.get(`/GetCountries`);
       console.log("response", response.data);
-      const allCountries = response.data.allCountries?.map((country) => ({
-        ...country,
-        countryImgPath: `http://localhost:7000/${country.countryImgPath
-          .replace("\\", "/")
-          .replace(/\s+/g, "")}`,
-      }));
-
       // const allCountries = response.data.allCountries?.map((country) => ({
       //   ...country,
-      //   countryImgPath: `https://travelling-cms-backend.onrender.com/${country.countryImgPath
+      //   countryImgPath: `http://localhost:7000/${country.countryImgPath
       //     .replace("\\", "/")
       //     .replace(/\s+/g, "")}`,
       // }));
+
+      const allCountries = response.data.allCountries?.map((country) => ({
+        ...country,
+        countryImgPath: `https://travelling-cms-backend.onrender.com/${country.countryImgPath
+          .replace("\\", "/")
+          .replace(/\s+/g, "")}`,
+      }));
       // Sort the countries alphabetically by name
       const sortedCountries = allCountries.sort((a, b) => {
         return a.countryName.localeCompare(b.countryName);
@@ -72,7 +72,7 @@ const Packages = () => {
                   className="mt-4 ml-5 mr-5 sm:ml-2 sm:mr-2"
                   style={{ boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)" }}
                 >
-                  <Link to={`/Countries`}>
+                  <Link to={`/Packages/${country.countryName}`}>
                     <CardMedia
                       style={{ height: "200px" }}
                       component="img"

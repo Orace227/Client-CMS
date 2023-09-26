@@ -4,14 +4,14 @@ import { IconPlus } from "@tabler/icons-react";
 import { Card, CardContent, CardMedia, Typography, Grid } from "@mui/material";
 import { Link } from "react-router-dom";
 
-const AllCard = (props) => {
+const PackageOfCountry = (props) => {
   const [packages, setPackages] = useState([]);
   const [error, setError] = useState(null);
 
   const fetchPackages = async () => {
     try {
       const response = await axios.get(
-        `/GetPackages?packageType=${props.packageType}&isLive=true`
+        `/GetPackages?country=${props.link}&isLive=true`
       );
       // const allPackages = response.data.allPackages.map((Package) => ({
       //   ...Package,
@@ -44,14 +44,12 @@ const AllCard = (props) => {
       <div className="w-full flex">
         <div className="w-[300px]">
           <div className="ml-3 w-[160%] text-3xl md:text-4xl flex justify-start font-bold">
-            <h1>{props.title}</h1>
+            <h1>All Packages</h1>
           </div>
           <div
             className="ml-4 mt-1 text-gray-500 w-[200px] md:w-[400px]"
             style={{ lineHeight: "1.2" }}
-          >
-            <span>Vacations to make your experience enjoyable!</span>
-          </div>
+          ></div>
         </div>
         <div className=" w-full flex justify-end items-end">
           <Link to={`/Countries`}>
@@ -106,4 +104,4 @@ const AllCard = (props) => {
   );
 };
 
-export default AllCard;
+export default PackageOfCountry;

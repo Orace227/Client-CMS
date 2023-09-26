@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./Package.css"; // Import your CSS file for styling
 import axios from "axios";
+import TravelInquiryForm from "./TravelInquiryForm";
 
 function PackageDetails(props) {
   const [hoverDiv, setHoverDiv] = useState(0);
@@ -94,13 +95,10 @@ function PackageDetails(props) {
         <div className={`section-container ${hoverDiv === 0 ? "active" : ""}`}>
           <div className="content">
             {Package[0]?.packageBody?.tourDetails?.map((tourDetail, index) => (
-              <div key={index}>
-                <div className="text-2xl mb-2">
-                  {`day ${index + 1}`} : {"  "}
-                  <span>{tourDetail.title}</span>
-                </div>
-                <p className="ml-5 mb-5"> {tourDetail.description}</p>
-              </div>
+              <div
+                key={index}
+                dangerouslySetInnerHTML={{ __html: tourDetail }}
+              />
             ))}
           </div>
         </div>
@@ -170,6 +168,14 @@ function PackageDetails(props) {
                 )
               )}
             </p>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div className={`section-container ${hoverDiv === 3 ? "active " : ""}`}>
+          <div className="content">
+            <TravelInquiryForm />
           </div>
         </div>
       </section>

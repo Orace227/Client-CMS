@@ -90,3 +90,43 @@
 color: white;
 
   }
+
+
+  /* In your component's CSS file or a separate styles file */
+.form-container {
+  background-color: #3498db; /* Blue background color */
+  padding: 20px;
+  border-radius: 8px;
+  color: white; /* Text color on the blue background */
+  width: 80%; /* Adjust the width as needed */
+  margin: 0 auto; /* Center the form horizontally */
+}
+
+.travel-form {
+  display: grid;
+  gap: 20px;
+}
+
+/* Style individual form fields as needed */
+.travel-form input,
+.travel-form textarea {
+  background-color: transparent; /* Make input fields transparent */
+  border: 1px solid white; /* White border for input fields */
+  color: white; /* Text color for input fields */
+  padding: 10px;
+}
+
+/* Style the submit button */
+.travel-form button {
+  background-color: #3498db; /* Blue background for the button */
+  color: white; /* Text color for the button */
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+}
+
+.travel-form button:disabled {
+  background-color: #ccc; /* Gray background for disabled button */
+  cursor: not-allowed;
+}
+
