@@ -50,7 +50,7 @@ const onSubmit = async (values, { resetForm }) => {
 const TravelInquiryForm = () => {
   return (
     <div className="">
-      <Typography variant="h4" gutterBottom>
+      <Typography variant="h4" style={{ color: "black" }} gutterBottom>
         Travel Inquiry Form
       </Typography>
       <Formik
@@ -69,7 +69,7 @@ const TravelInquiryForm = () => {
                   fullWidth
                   margin="normal"
                   variant="outlined"
-                  inputProps={{ style: { color: "white" } }}
+                  
                 />
                 <ErrorMessage
                   name="fullName"
@@ -87,7 +87,7 @@ const TravelInquiryForm = () => {
                   fullWidth
                   margin="normal"
                   variant="outlined"
-                  inputProps={{ style: { color: "white" } }}
+                  
                 />
                 <ErrorMessage
                   name="mobile"
@@ -105,7 +105,7 @@ const TravelInquiryForm = () => {
                   fullWidth
                   margin="normal"
                   variant="outlined"
-                  inputProps={{ style: { color: "white" } }}
+                  
                 />
                 <ErrorMessage
                   name="email"
@@ -123,7 +123,7 @@ const TravelInquiryForm = () => {
                   fullWidth
                   margin="normal"
                   variant="outlined"
-                  inputProps={{ style: { color: "white" } }}
+                  
                 />
               </Grid>
 
@@ -139,7 +139,7 @@ const TravelInquiryForm = () => {
                   InputLabelProps={{
                     shrink: true,
                   }}
-                  inputProps={{ style: { color: "white" } }}
+                  
                 />
                 <ErrorMessage
                   name="likelyTravelDate"
@@ -158,7 +158,7 @@ const TravelInquiryForm = () => {
                   fullWidth
                   margin="normal"
                   variant="outlined"
-                  inputProps={{ style: { color: "white" } }}
+                  
                 />
                 <ErrorMessage
                   name="numberOfAdults"
@@ -177,7 +177,7 @@ const TravelInquiryForm = () => {
                   fullWidth
                   margin="normal"
                   variant="outlined"
-                  inputProps={{ style: { color: "white" } }}
+                  
                 />
               </Grid>
 
@@ -190,7 +190,7 @@ const TravelInquiryForm = () => {
                   fullWidth
                   margin="normal"
                   variant="outlined"
-                  inputProps={{ style: { color: "white" } }}
+                  
                 />
               </Grid>
 
@@ -203,7 +203,7 @@ const TravelInquiryForm = () => {
                   fullWidth
                   margin="normal"
                   variant="outlined"
-                  inputProps={{ style: { color: "white" } }}
+                  
                 />
               </Grid>
 
@@ -217,7 +217,7 @@ const TravelInquiryForm = () => {
                   rows={4}
                   margin="normal"
                   variant="outlined"
-                  inputProps={{ style: { color: "white" } }}
+                  
                 />
                 <ErrorMessage
                   name="message"

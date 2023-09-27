@@ -37,10 +37,10 @@ function PackageDetails(props) {
   };
 
   useEffect(() => {
-    // window.scrollTo({
-    //   top: 0,
-    //   behavior: "smooth",
-    // });
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
     fetchPackageDetails();
   }, []);
 
@@ -173,7 +173,11 @@ function PackageDetails(props) {
       </section>
 
       <section>
-        <div className={`section-container ${hoverDiv === 3 ? "active " : ""}`}>
+        <div
+          className={`section-container section-container-Inquiry ${
+            hoverDiv === 3 ? "active " : ""
+          }`}
+        >
           <div className="content">
             <TravelInquiryForm />
           </div>

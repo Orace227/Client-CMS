@@ -28,9 +28,9 @@ function NavList() {
         color="blue-gray"
         className="p-2 font-bold text-lg transition transform hover:text-white hover:bg-blue-900 rounded-lg lg:hover:scale-105 hover:shadow-lg"
       >
-        <a href="#" className="flex items-center  transition-colors">
+        <Link to="/Countries" className="flex items-center transition-colors">
           Destinations
-        </a>
+        </Link>
       </Typography>
       <Typography
         as="li"
@@ -38,9 +38,9 @@ function NavList() {
         color="blue-gray"
         className="p-2 font-bold text-lg transition transform hover:text-white hover:bg-blue-900 rounded-lg lg:hover:scale-105 hover:shadow-lg"
       >
-        <a href="#" className="flex items-center  transition-colors">
+        <Link to="/AboutUs" className="flex items-center transition-colors">
           About Us
-        </a>
+        </Link>
       </Typography>
       <Typography
         as="li"
@@ -48,9 +48,9 @@ function NavList() {
         color="blue-gray"
         className="p-2 font-bold text-lg transition transform hover:text-white hover:bg-blue-900 rounded-lg lg:hover:scale-105 hover:shadow-lg"
       >
-        <a href="#" className="flex items-center transition-colors">
+        <Link to="/AboutUs" className="flex items-center transition-colors">
           Contact Us
-        </a>
+        </Link>
       </Typography>
     </ul>
   );

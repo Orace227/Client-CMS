@@ -37,7 +37,7 @@ const PackageOfCountry = (props) => {
     fetchPackages();
   }, []);
 
-  const numPackagesToShow = 4;
+  // const numPackagesToShow = 4;
 
   return (
     <div className="flex mt-16 flex-wrap md:ml-16 md:mr-16">
@@ -69,7 +69,7 @@ const PackageOfCountry = (props) => {
         </div>
       ) : (
         <Grid container spacing={3}>
-          {packages.slice(0, numPackagesToShow).map((card) => (
+          {packages.map((card) => (
             <Grid item xs={12} sm={6} md={4} lg={3} key={card._id}>
               <Card
                 className="mt-4 ml-5 mr-5 sm:ml-2 sm:mr-2"

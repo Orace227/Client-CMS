@@ -7,7 +7,7 @@ const WhyChooseUs = () => {
     <>
       <div>
         <img
-          className="w-full mt-16 h-[250px] object-cover"
+          className="w-full mt-16 h-[380px] object-cover"
           src={banner}
           alt="banner 2"
         />
