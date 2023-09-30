@@ -49,7 +49,7 @@ const Packages = () => {
   });
 
   return (
-    <div className="flex  flex-wrap md:ml-16 md:mr-16">
+    <div className="flex  mb-10  flex-wrap md:ml-16 md:mr-16">
       <div className="w-full flex">
         <div className="w-full">
           <div className="ml-3 mt-5 text-4xl md:text-4xl flex justify-center font-bold">
@@ -59,7 +59,7 @@ const Packages = () => {
       </div>
 
       {Object.keys(countriesByContinent).map((continent, index) => (
-        <div key={continent} className="w-full mt-4">
+        <div key={continent} className="w-full mt-4 ">
           <Typography variant="h4" className="ml-2  mb-2">
             <div className="mt-10 ml-6">
               {index + 1}.{continent}

@@ -179,7 +179,7 @@ function PackageDetails(props) {
           }`}
         >
           <div className="content">
-            <TravelInquiryForm />
+            <TravelInquiryForm packageId={props.packageId} />
           </div>
         </div>
       </section>

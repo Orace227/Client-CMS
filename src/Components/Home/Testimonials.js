@@ -69,7 +69,7 @@ export default function Testimonials() {
               <div className="flex justify-center">
                 <div
                   key={index}
-                  className="w-[500px] bg-white dark:bg-gray-700 p-6 rounded-lg"
+                  className="w-[500px] h-[200px] bg-white dark:bg-gray-700 p-6 rounded-lg"
                 >
                   <div className="flex flex-col items-center justify-center">
                     <h5 className="text-4xl font-semibold">

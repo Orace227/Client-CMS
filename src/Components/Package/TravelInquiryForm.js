@@ -6,6 +6,7 @@ import axios from "axios";
 import toast, { Toaster } from "react-hot-toast";
 
 const initialValues = {
+  packageId: "",
   fullName: "",
   mobile: "",
   email: "",
@@ -30,24 +31,26 @@ const validationSchema = Yup.object().shape({
   message: Yup.string().required("Message is required"),
 });
 
-const onSubmit = async (values, { resetForm }) => {
-  // You can handle form submission here, e.g., send data to your backend
-  console.log("Submitted:", values);
-  try {
-    const inquiry = await axios.post("/CreateInquiry", values);
-    if (inquiry) {
-      toast.success("you inquiry has been completed!!");
+const TravelInquiryForm = (props) => {
+  const onSubmit = async (values, { resetForm }) => {
+    // You can handle form submission here, e.g., send data to your backend
+    values.packageId = await props.packageId;
+    console.log("Submitted:", values);
+
+    try {
+      const inquiry = await axios.post("/CreateInquiry", values);
+      if (inquiry) {
+        toast.success("you inquiry has been completed!!");
+      }
+    } catch (err) {
+      toast.error("some error ouccure to fill-up the form!!");
+      console.log(err);
     }
-  } catch (err) {
-    toast.error("some error ouccure to fill-up the form!!");
-    console.log(err);
-  }
 
-  // Clear the form after successful submission
-  resetForm();
-};
+    // Clear the form after successful submission
+    resetForm();
+  };
 
-const TravelInquiryForm = () => {
   return (
     <div className="">
       <Typography variant="h4" style={{ color: "black" }} gutterBottom>
@@ -58,10 +61,22 @@ const TravelInquiryForm = () => {
         validationSchema={validationSchema}
         onSubmit={onSubmit}
       >
-        {({ isSubmitting }) => (
+        {({ isSubmitting, setFieldValue }) => (
           <Form>
             <Grid container spacing={2}>
-              <Grid item xs={12}>
+              <Grid item xs={12} sm={6}>
+                <Field
+                  name="packageId"
+                  label="Package Id"
+                  value={props.packageId}
+                  as={TextField}
+                  fullWidth
+                  margin="normal"
+                  variant="outlined"
+                  disabled
+                />
+              </Grid>
+              <Grid item xs={12} sm={6}>
                 <Field
                   name="fullName"
                   label="Full Name"
@@ -69,7 +84,6 @@ const TravelInquiryForm = () => {
                   fullWidth
                   margin="normal"
                   variant="outlined"
-                  
                 />
                 <ErrorMessage
                   name="fullName"
@@ -87,7 +101,6 @@ const TravelInquiryForm = () => {
                   fullWidth
                   margin="normal"
                   variant="outlined"
-                  
                 />
                 <ErrorMessage
                   name="mobile"
@@ -105,7 +118,6 @@ const TravelInquiryForm = () => {
                   fullWidth
                   margin="normal"
                   variant="outlined"
-                  
                 />
                 <ErrorMessage
                   name="email"
@@ -123,7 +135,6 @@ const TravelInquiryForm = () => {
                   fullWidth
                   margin="normal"
                   variant="outlined"
-                  
                 />
               </Grid>
 
@@ -139,7 +150,6 @@ const TravelInquiryForm = () => {
                   InputLabelProps={{
                     shrink: true,
                   }}
-                  
                 />
                 <ErrorMessage
                   name="likelyTravelDate"
@@ -158,7 +168,6 @@ const TravelInquiryForm = () => {
                   fullWidth
                   margin="normal"
                   variant="outlined"
-                  
                 />
                 <ErrorMessage
                   name="numberOfAdults"
@@ -177,7 +186,6 @@ const TravelInquiryForm = () => {
                   fullWidth
                   margin="normal"
                   variant="outlined"
-                  
                 />
               </Grid>
 
@@ -190,7 +198,6 @@ const TravelInquiryForm = () => {
                   fullWidth
                   margin="normal"
                   variant="outlined"
-                  
                 />
               </Grid>
 
@@ -203,7 +210,6 @@ const TravelInquiryForm = () => {
                   fullWidth
                   margin="normal"
                   variant="outlined"
-                  
                 />
               </Grid>
 
@@ -217,7 +223,6 @@ const TravelInquiryForm = () => {
                   rows={4}
                   margin="normal"
                   variant="outlined"
-                  
                 />
                 <ErrorMessage
                   name="message"
