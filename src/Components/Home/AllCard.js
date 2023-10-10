@@ -77,7 +77,7 @@ const AllCard = (props) => {
                 className="mt-4 ml-5 mr-5 sm:ml-2 sm:mr-2 "
                 style={{
                   boxShadow: "0 4px 10px rgba(0, 0, 0, 0.2)",
-                  borderRadius: "2  0px",
+                  borderRadius: "21px",
                 }}
               >
                 <Link to={`/Package/${card.PackageId}`} className="">
