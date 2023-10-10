@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { IconPlus } from "@tabler/icons-react";
+import { IconPlus, IconSend } from "@tabler/icons-react";
 import { Card, CardContent, CardMedia, Typography, Grid } from "@mui/material";
 import { Link } from "react-router-dom";
 
@@ -11,7 +11,7 @@ const AllCard = (props) => {
   const fetchPackages = async () => {
     try {
       const response = await axios.get(
-        `/GetPackages?packageType=${props.packageType}&isLive=true`
+        `/GetPackages?packageType=${props.packageType}&isLive=true&isShown=true`
       );
       // const allPackages = response.data.allPackages.map((Package) => ({
       //   ...Package,
@@ -44,7 +44,7 @@ const AllCard = (props) => {
       <div className="w-full flex">
         <div className="w-[300px]">
           <div className="ml-3 w-[160%] text-3xl md:text-4xl flex justify-start font-bold">
-            <h1>{props.title}</h1>
+            <h1 className="">{props.title}</h1>
           </div>
           <div
             className="ml-4 mt-1 text-gray-500 w-[200px] md:w-[400px]"
@@ -72,12 +72,15 @@ const AllCard = (props) => {
       ) : (
         <Grid container spacing={3}>
           {packages.slice(0, numPackagesToShow).map((card) => (
-            <Grid item xs={12} sm={6} md={4} lg={3} key={card._id}>
+            <Grid item xs={12} sm={6} md={4} lg={3} key={card._id} className="">
               <Card
-                className="mt-4 ml-5 mr-5 sm:ml-2 sm:mr-2"
-                style={{ boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)" }}
+                className="mt-4 ml-5 mr-5 sm:ml-2 sm:mr-2 "
+                style={{
+                  boxShadow: "0 4px 10px rgba(0, 0, 0, 0.2)",
+                  borderRadius: "2  0px",
+                }}
               >
-                <Link to={`/Package/${card.PackageId}`}>
+                <Link to={`/Package/${card.PackageId}`} className="">
                   <CardMedia
                     style={{ height: "200px" }}
                     component="img"
@@ -86,13 +89,23 @@ const AllCard = (props) => {
                   />
                   <CardContent>
                     <Typography component="div">
-                      <div className="font-bold text-xl">
+                      <div className="font-bold text-2xl text-blue-900 Card-title text-center ">
                         {card.packageName}
                       </div>
                     </Typography>
                     <Typography component="div">
-                      <div className="text-gray-700 font-light">
-                        {card.packageDesc}
+                      <div className="flex justify-center ">
+                        <div className=" w-[160px] truncate  text-blue-900 font-light Card-desc">
+                          {card.packageDesc}
+                        </div>
+                      </div>
+                    </Typography>
+                    <Typography component="div">
+                      <div className="text-center  text-[13px] relative top-3 left-[82px]  text-gray-600 font-light Card-desc">
+                        <div className="relative top-[16px] left-[87px]">
+                          <IconSend size={15} />
+                        </div>
+                        7 days Trip
                       </div>
                     </Typography>
                   </CardContent>

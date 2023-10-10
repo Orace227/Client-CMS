@@ -30,3 +30,13 @@
 body{
   color: #183b83 ;
 }
+
+
+
+.Card-title{
+  font-family: 'Volkhov', serif;
+}
+
+.Card-desc{
+  font-family: 'Poppins', sans-serif;
+}
