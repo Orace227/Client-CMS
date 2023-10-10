@@ -77,6 +77,7 @@ const AllCard = (props) => {
                 className="mt-4 ml-5 mr-5 sm:ml-2 sm:mr-2 "
                 style={{
                   boxShadow: "0 4px 10px rgba(0, 0, 0, 0.2)",
+                  width:"auto",
                   borderRadius: "21px",
                 }}
               >
@@ -89,23 +90,15 @@ const AllCard = (props) => {
                   />
                   <CardContent>
                     <Typography component="div">
-                      <div className="font-bold text-2xl text-blue-900 Card-title text-center ">
+                      <div className="font-bold text-2xl text-[#183b83] Card-title text-center ">
                         {card.packageName}
                       </div>
                     </Typography>
                     <Typography component="div">
                       <div className="flex justify-center ">
-                        <div className=" w-[160px] truncate  text-blue-900 font-light Card-desc">
+                        <div className=" w-[160px] truncate  text-[#183b83] font-light Card-desc">
                           {card.packageDesc}
                         </div>
-                      </div>
-                    </Typography>
-                    <Typography component="div">
-                      <div className="text-center  text-[13px] relative top-3 left-[82px]  text-gray-600 font-light Card-desc">
-                        <div className="relative top-[16px] left-[87px]">
-                          <IconSend size={15} />
-                        </div>
-                        7 days Trip
                       </div>
                     </Typography>
                   </CardContent>

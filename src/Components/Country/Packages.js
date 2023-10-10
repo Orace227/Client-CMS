@@ -70,18 +70,21 @@ const Packages = () => {
               <Grid item xs={12} sm={6} md={4} lg={3} key={country._id}>
                 <Card
                   className="mt-4 ml-5 mr-5 sm:ml-2 sm:mr-2"
-                  style={{ boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)" }}
+                  style={{
+                    boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)",
+                    borderRadius: "21px",
+                  }}
                 >
                   <Link to={`/Packages/${country.countryName}`}>
                     <CardMedia
-                      style={{ height: "200px" }}
+                      style={{ height: "180px" }}
                       component="img"
                       alt={country.countryImgPath}
                       image={country.countryImgPath}
                     />
                     <CardContent>
                       <Typography component="div">
-                        <div className="font-bold text-xl">
+                        <div className="font-bold  text-center  text-[#183b83] text-3xl Card-title">
                           {country.countryName}
                         </div>
                       </Typography>
