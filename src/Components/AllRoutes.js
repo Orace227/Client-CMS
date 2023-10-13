@@ -5,6 +5,7 @@ import CountryPage from "./Country/CountryPage";
 import PackagePage from "./Package/PackagePage";
 import PackagesPage from "./PackageOfCuntry/PackagePage";
 import AboutPage from "./About/AboutPage";
+import ContactPage from "./contactUs/ContactPage";
 export default function AllRoutes() {
   return (
     <>
@@ -15,6 +16,7 @@ export default function AllRoutes() {
           <Route path="/Package/:packageId" element={<PackagePage />} />
           <Route path="/Packages/:country" element={<PackagesPage />} />
           <Route path="/AboutUs" element={<AboutPage />} />
+          <Route path="/ContactUs" element={<ContactPage />} />
         </Routes>
       </BrowserRouter>
     </>

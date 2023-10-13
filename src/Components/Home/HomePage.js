@@ -21,6 +21,7 @@ export default function HomePage() {
       <WhyChooseUs />
       <AllCard packageType="Wildlife Drives" title="Wildlife Drives" />
       <AllCard packageType="Sustainable paths" title="Sustainable Paths" />
+      <AllCard packageType="Leisure" title="Leisure" />
       <WeOffer />
       <ClientLogos />
       <Testimonials />

@@ -48,7 +48,7 @@ function NavList() {
         color="blue-gray"
         className="p-2 font-bold text-lg transition transform  rounded-lg lg:hover:scale-105 hover:shadow-lg"
       >
-        <Link to="/AboutUs" className="flex items-center transition-colors">
+        <Link to="/ContactUs" className="flex items-center transition-colors">
           Contact Us
         </Link>
       </Typography>
@@ -76,7 +76,7 @@ export default function NavBar(props) {
         <div className="flex items-center justify-between text-blue-gray-900">
           <Typography
             as="a"
-            href="#"
+            href="/"
             variant="h6"
             className="mr-4 cursor-pointer py-1.5 flex items-center"
           >

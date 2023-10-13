@@ -1,0 +1,304 @@
+body{
+    font-family: 'Poppins', sans-serif;
+  }
+    .left {
+      animation: slideRightToLeft 3s 1; 
+    }
+    
+    @keyframes slideRightToLeft {
+      0% {
+        transform: translateX(-50%);
+      }
+      100% {
+        transform: translateX(0%);
+      }
+    }
+  
+  
+    .leftTow {
+      animation: slideRightToLeft 8s 3; 
+    }
+    @keyframes slideRightToLeft {
+      0% {
+        transform: translateX(-50%);
+      }
+      100% {
+        transform: translateX(0%);
+      }
+    }
+  
+    .rightTow {
+      animation: slideLeftToRight 8s 3;
+    }
+    @keyframes slideLeftToRight {
+      0% {
+        transform: translateX(150%);
+      }
+      100% {
+        transform: translateX(0%);
+      }
+    }
+  
+  
+    .left1 {
+      animation: slideRightToLeft 2s 1; 
+    }
+    
+    @keyframes slideRightToLeft {
+      0% {
+        transform: translateX(-50%);
+      }
+      100% {
+        transform: translateX(0%);
+      }
+    }
+    .right {
+      animation: slideLeftToRight 3s 1;
+    }
+    @keyframes slideLeftToRight {
+      0% {
+        transform: translateX(50%);
+      }
+      100% {
+        transform: translateX(0%);
+      }
+    }
+    .up {
+      position: relative;
+      transform: translateY(100%); 
+      animation: slideUp 1s forwards; 
+    }
+    @keyframes slideUp {
+      to {
+        transform: translateY(0);
+      }
+    }
+    .up1 {
+      position: relative;
+      transform: translateY(100%); 
+      animation: slideUp 1.4s forwards; 
+    }
+    @keyframes slideUp {
+      to {
+        transform: translateY(0);
+      }
+    }
+    .up2 {
+      position: relative;
+      transform: translateY(100%); 
+      animation: slideUp 1.6s forwards; 
+    }
+    @keyframes slideUp {
+      to {
+        transform: translateY(0);
+      }
+    }
+    .up3 {
+      position: relative;
+      transform: translateY(100%); 
+      animation: slideUp 2s forwards; 
+    }
+    @keyframes slideUp {
+      to {
+        transform: translateY(0);
+      }
+    }
+   
+    
+    .animated-text {
+      opacity: 0; /* Start with 0 opacity (hidden) */
+      animation: fadeInUp 3s forwards; /* Animation name and duration */
+    }
+    
+    /* Define the fadeInUp animation */
+    @keyframes fadeInUp {
+      to {
+        opacity: 1; /* Fade the element in (visible) */
+        transform: translateY(0); /* No vertical movement, just opacity change */
+      }
+    }
+    .animated-text4 {
+      opacity: 0; /* Start with 0 opacity (hidden) */
+      animation: fadeInUp 2s forwards; /* Animation name and duration */
+    }
+    
+    /* Define the fadeInUp animation */
+    @keyframes fadeInUp {
+      to {
+        opacity: 1; /* Fade the element in (visible) */
+        transform: translateY(0); /* No vertical movement, just opacity change */
+      }
+    }
+    .animated-text1 {
+      opacity: 0; /* Start with 0 opacity (hidden) */
+      animation: fadeInUp 0.4s forwards; /* Animation name and duration */
+    }
+    
+    /* Define the fadeInUp animation */
+    @keyframes fadeInUp {
+      to {
+        opacity: 1; /* Fade the element in (visible) */
+        transform: translateY(0); /* No vertical movement, just opacity change */
+      }
+    }
+    .animated-text2 {
+      opacity: 0; /* Start with 0 opacity (hidden) */
+      animation: fadeInUp 1s forwards; /* Animation name and duration */
+    }
+    
+    /* Define the fadeInUp animation */
+    @keyframes fadeInUp {
+      to {
+        opacity: 1; /* Fade the element in (visible) */
+        transform: translateY(0); /* No vertical movement, just opacity change */
+      }
+    }
+  
+    .typewriter {
+      overflow: hidden; /* Ensures the content is not revealed until the animation */
+      border-right: .15em solid rgba(255, 166, 0, 0); /* The typwriter cursor */
+      white-space: nowrap; /*Keeps the content on a single line
+      /* margin: 0 auto; Gives that scrolling effect as the typing happens */
+      letter-spacing: .2em; /* Adjust as needed */
+      animation: 
+        typing 8s steps(50, end),
+        blink-caret .75s step-end infinite;
+    }
+    
+    /* The typing effect */
+    @keyframes typing {
+      from { width: 0 }
+      to { width: 100% }
+    }
+    
+    /* The typewriter cursor effect */
+    @keyframes blink-caret {
+      from, to { border-color: transparent }
+      50% { border-color: rgba(255, 166, 0, 0); }
+    }
+    
+    .typewriter1 {
+      overflow: hidden; /* Ensures the content is not revealed until the animation */
+      border-right: .15em solid rgb(255, 166, 0); /* The typwriter cursor */
+      white-space: nowrap; 
+      animation: 
+        blink-carete .75s step-end infinite;
+    }
+  
+    @keyframes blink-carete {
+      from, to { border-color: transparent }
+      50% { border-color: rgb(255, 166, 0); }
+    }
+    
+    .stick-to-character {
+      position: relative;
+    }
+    
+    .stick-to-character::before {
+      opacity: 0; /* Start with 0 opacity (hidden) */
+      animation: fadeInUp 3s forwards;
+      content: "";
+      display: block;
+      
+      background-image: url('./img/Cap.png'); /* Replace with your image URL */
+      background-size: cover;
+      top: 50%; /* Adjust as needed */
+      transform: translateY(-50%);
+      z-index: 10;
+    }
+    
+    /* width */
+  /* ::-webkit-scrollbar {/ */
+    /* width: 10px; */
+  /* } */
+  
+  /* Track */
+  /* ::-webkit-scrollbar-track { */
+    /* box-shadow: inset 0 0 5px #F2B725;  */
+    /* border-radius: 0px; */
+  /* } */
+   
+  /* Handle */
+  /* ::-webkit-scrollbar-thumb { */
+    /* background: #183B83;  */
+    /* border-radius: 10px; */
+  /* } */
+  
+  /* Handle on hover */
+  /* ::-webkit-scrollbar-thumb:hover {
+    background: #183B83;  */
+  /* } */
+  
+  .flex-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start; /* Start from the top */
+    height: 300px; /* Set a fixed height for the container */
+  }
+  
+  .flex-item {
+    animation: moveRight 5s forwards;
+  }
+  
+  @keyframes moveRight {
+    0% {
+      transform: translateX(-100%); /* Move the items to the left of the container */
+      opacity: 1; /* Initially hide the items */
+    }
+    100% {
+      transform: translateX(0%); /* Move the items back to their original position */
+      opacity: 0; /* Make the items fully visible */
+      
+    }
+  }
+  .flex-item2 {
+    animation: op 8s forwards;
+  }
+  
+  @keyframes op {
+    0% {
+      opacity: 0; /* Initially hide the items */
+    }
+    100% {
+      opacity: 1; /* Make the items fully visible */
+    }
+  }
+  .flex-items {
+    animation: moveRigh 5s forwards;
+  }
+  
+  @keyframes moveRigh {
+    0% {
+      transform: translateX(-100%); /* Move the items to the left of the container */
+    }
+    100% {
+      transform: translateX(105%); /* Move the items back to their original position */
+      
+    }
+  }
+  .flex-it {
+    animation: m 5s forwards;
+  }
+  
+  @keyframes m {
+    0% {
+      transform: translateX(-100%); /* Move the items to the left of the container */
+    }
+    100% {
+      transform: translateX(80%); /* Move the items back to their original position */
+      
+    }
+  }
+  .flex-item3 {
+    animation: opa 8s forwards;
+  }
+  
+  @keyframes opa {
+    0% {
+      opacity: 0; /* Initially hide the items */
+    }
+    100% {
+      opacity: 1; /* Make the items fully visible */
+    }
+  }
