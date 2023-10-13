@@ -37,7 +37,7 @@
     /* background-color: #689aff; */
     text-decoration: none;
     padding: 0.5rem 1rem;
-    border-radius: 999px;
+    border-radius: 10px;
     transition: background-color 0.3s, color 0.3s;
   }
   
@@ -139,3 +139,38 @@ color: white;
   cursor: not-allowed;
 }
 
+
+
+.nav-items {
+  display: none;
+}
+
+/* Show mobile navigation when the 'showMobileNav' state is true */
+.show{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #ffffff; /* Customize the background color */
+  position: relative;
+  /* top: 50px;  */
+  /* left: 0; */
+  /* right: 0; */
+}
+
+/* Style for individual navigation items in the dropdown */
+.nav-item {
+  padding: 10px;
+  text-align: center;
+  cursor: pointer;
+  /* Add additional styling as needed */
+}
+
+/* Media query for screens with a max-width of 768px (adjust as needed) */
+@media (max-width: 766px) {
+  .show .nav-items {
+    display: flex;
+  }
+  .nav-toggle {
+    display: block;
+  }
+}
