@@ -1,4 +1,4 @@
-/* PackageDetails.css */
+PackageDetails.css
 .package-details-container {
     font-family: Arial, sans-serif;
     max-width: 100%;
@@ -19,7 +19,10 @@
   .nav-container {
     background-color: #ffffff;
     display: flex;
-    justify-content: center;
+    justify-content: start;
+    margin-left: 24px;
+    position: relative;
+    top: -10px;
     font-weight: bold;
   }
   
@@ -37,7 +40,9 @@
     /* background-color: #689aff; */
     text-decoration: none;
     padding: 0.5rem 1rem;
-    border-radius: 10px;
+    /* border-radius: 10px; */
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
     transition: background-color 0.3s, color 0.3s;
   }
   
@@ -54,26 +59,67 @@
   }
   
   .section-container {
-    background-color: #fff;
+    background-color: #183b83;
     padding: 2rem;
     margin: 1.5rem;
-    background-color: #183b83; /* Add a background color if needed */
     display: none;
     border-radius: 20px;
+    /* border-top-left-radius: 4px; */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    /* width: calc(70vw - 1.5rem); */
+}
+
+/* Apply responsive styling for tablets and larger screens */
+@media (min-width: 768px) {
+    .section-container {
+      border-top-left-radius: 5px;
+      width: calc(95vw - 1.5rem); /* Adjust the width as needed */
+    }
+}
+@media (min-width: 1280px) {
+  .section-container {
+      width: calc(70vw - 1.5rem); /* Adjust the width as needed */
   }
+  .section-container-Inquiry{
+    width: calc(27vw - 1.5rem);
+
+  }
+
+}
+  
+
   .section-container-Inquiry {
-    background-color: #000000;
+    background-color: #ffffff; /* Add a background color if needed */
     padding: 2rem;
     margin: 1.5rem;
-    background-color: #ffffff; /* Add a background color if needed */
     display: none;
     border-radius: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    /* width: calc(27vw - 1.5rem); */
+    overflow:hidden;
   }
+
+.section-container-Inquiry .content1 {
+  max-height: 300px; /* Set the maximum height */
+  overflow-y: auto; /* Enable scrolling */
+}
+
+/* Customize scrollbar appearance (Webkit browsers) */
+.section-container-Inquiry .content1::-webkit-scrollbar {
+  width: 8px; /* Width of the scrollbar */
+  padding: 2px;
+  background-color: transparent; /* Background color of the scrollbar track */
+}
+
+.section-container-Inquiry .content1::-webkit-scrollbar-thumb {
+  background-color: #183b83; /* Color of the scrollbar thumb */
+  border-radius: 4px; /* Radius of the scrollbar thumb */
+}
 
   .section-container.active {
     display: block;
+    position: relative;
+    top: -37px;
   }
   
   /* Media Queries for Responsiveness */
@@ -95,10 +141,6 @@
     }
   }
 
-  .content *{
-color: white;
-
-  }
 
 
   /* In your component's CSS file or a separate styles file */
@@ -150,6 +192,7 @@ color: white;
   display: flex;
   flex-direction: column;
   align-items: center;
+  
   background-color: #ffffff; /* Customize the background color */
   position: relative;
   /* top: 50px;  */
@@ -173,4 +216,9 @@ color: white;
   .nav-toggle {
     display: block;
   }
+}
+
+
+.content *{
+  color: #ffffff;
 }

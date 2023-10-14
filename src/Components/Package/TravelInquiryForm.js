@@ -53,7 +53,7 @@ const TravelInquiryForm = (props) => {
 
   return (
     <div className="">
-      <Typography variant="h4" style={{ color: "black" }} gutterBottom>
+      <Typography variant="h4" style={{ color: "black",marginTop:"10px" }} gutterBottom>
         Travel Inquiry Form
       </Typography>
       <Formik
