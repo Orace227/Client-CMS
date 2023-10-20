@@ -18,14 +18,14 @@ const Accordion = (props) => {
     try {
       const res = await axios.get(`/GetPackages?PackageId=${props.packageId}`);
       console.log("package data", res.data);
-      //   const PackageData = res.data.allPackages.map((packageItem) => ({
-      //     // Renamed to packageItem to avoid conflict
-      //     ...packageItem,
-      //     packageImgPath: `http://localhost:7000/${packageItem.packageImgPath.replace(
-      //       "\\",
-      //       "/"
-      //     )}`,
-      //   }));
+      // const PackageData = res.data.allPackages.map((packageItem) => ({
+      //   // Renamed to packageItem to avoid conflict
+      //   ...packageItem,
+      //   packageImgPath: `http://localhost:7000/${packageItem.packageImgPath.replace(
+      //     "\\",
+      //     "/"
+      //   )}`,
+      // }));
 
       const PackageData = res.data.allPackages.map((packageItem) => ({
         ...packageItem,

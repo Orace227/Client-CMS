@@ -85,31 +85,25 @@ function PackageDetails(props) {
             }`}
           >
             <div
-              className={`nav-item rounded-t-md rounded-b-none  ${
-                hoverDiv === 0 ? "active" : ""
-              }`}
+              className={`nav-item   ${hoverDiv === 0 ? "active" : ""}`}
               onClick={() => handleButtonClick(0)}
             >
               Tour Details
             </div>
             <div
-              className={`nav-item rounded-t-md rounded-b-none ${
-                hoverDiv === 1 ? "active" : ""
-              }`}
+              className={`nav-item  ${hoverDiv === 1 ? "active" : ""}`}
               onClick={() => handleButtonClick(1)}
             >
               Inclusions & Exclusions
             </div>
             <div
-              className={`nav-item rounded-t-md rounded-b-none ${
-                hoverDiv === 2 ? "active" : ""
-              }`}
+              className={`nav-item  ${hoverDiv === 2 ? "active" : ""}`}
               onClick={() => handleButtonClick(2)}
             >
               Terms & Conditions
             </div>
             <div
-              className={`nav-item xl:hidden mb-4 md:mb-0 rounded-t-md rounded-b-none ${
+              className={`nav-item xl:hidden mb-4 md:mb-0  ${
                 hoverDiv === 3 ? "active" : ""
               }`}
               onClick={() => handleButtonClick(3)}
@@ -124,9 +118,7 @@ function PackageDetails(props) {
         <div className="">
           <section>
             <div
-              className={`section-container rounded-md ${
-                hoverDiv === 0 ? "active" : ""
-              }`}
+              className={`section-container  ${hoverDiv === 0 ? "active" : ""}`}
             >
               <div className="content">
                 {Package[0]?.packageBody?.tourDetails?.map(
