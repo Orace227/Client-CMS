@@ -24,12 +24,14 @@ function PackageDetails(props) {
       const res = await axios.get(`/GetPackages?PackageId=${props.packageId}`);
       console.log("package data", res.data);
       // const PackageData = res.data.allPackages.map((packageItem) => ({
+      //   // Renamed to packageItem to avoid conflict
       //   ...packageItem,
       //   packageImgPath: `http://localhost:7000/${packageItem.packageImgPath.replace(
       //     "\\",
       //     "/"
       //   )}`,
       // }));
+
       const PackageData = res.data.allPackages.map((packageItem) => ({
         ...packageItem,
         packageImgPath: `https://travelling-cms-backend.onrender.com/${packageItem.packageImgPath.replace(
@@ -50,40 +52,7 @@ function PackageDetails(props) {
       behavior: "smooth",
     });
     fetchPackageDetails();
-  }, [props.packageId]);
-
-  const renderMobileNav = () => {
-    if (showMobileNav) {
-      return (
-        <div className="nav-container-mobile">
-          <div
-            className="nav-item rounded-t-md"
-            onClick={() => handleButtonClick(0)}
-          >
-            Tour Details
-          </div>
-          <div
-            className="nav-item rounded-t-md"
-            onClick={() => handleButtonClick(1)}
-          >
-            Inclusions & Exclusions
-          </div>
-          <div
-            className="nav-item rounded-t-md"
-            onClick={() => handleButtonClick(2)}
-          >
-            Terms & Conditions
-          </div>
-          <div
-            className="nav-item rounded-t-md"
-            onClick={() => handleButtonClick(3)}
-          >
-            Enquiry
-          </div>
-        </div>
-      );
-    }
-  };
+  }, [props.packageId]); // Added props.packageId to dependency array
 
   return (
     <div className="package-details-container">
@@ -100,6 +69,8 @@ function PackageDetails(props) {
           onClick={toggleMobileNav}
         >
           <button className="cursor-pointer">
+            {" "}
+            {/* Replaced <i> with <button> */}
             {showMobileNav ? (
               <XMarkIcon className="h-7 w-7" strokeWidth={2} />
             ) : (
@@ -107,7 +78,46 @@ function PackageDetails(props) {
             )}
           </button>
         </div>
-        {renderMobileNav()}
+        <nav className="nav-container mt-7">
+          <div
+            className={`hidden gap-1  md:flex md:flex-row w-full ${
+              showMobileNav ? "show" : ""
+            }`}
+          >
+            <div
+              className={`nav-item rounded-t-md rounded-b-none  ${
+                hoverDiv === 0 ? "active" : ""
+              }`}
+              onClick={() => handleButtonClick(0)}
+            >
+              Tour Details
+            </div>
+            <div
+              className={`nav-item rounded-t-md rounded-b-none ${
+                hoverDiv === 1 ? "active" : ""
+              }`}
+              onClick={() => handleButtonClick(1)}
+            >
+              Inclusions & Exclusions
+            </div>
+            <div
+              className={`nav-item rounded-t-md rounded-b-none ${
+                hoverDiv === 2 ? "active" : ""
+              }`}
+              onClick={() => handleButtonClick(2)}
+            >
+              Terms & Conditions
+            </div>
+            <div
+              className={`nav-item xl:hidden mb-4 md:mb-0 rounded-t-md rounded-b-none ${
+                hoverDiv === 3 ? "active" : ""
+              }`}
+              onClick={() => handleButtonClick(3)}
+            >
+              Enquiry
+            </div>
+          </div>
+        </nav>
       </header>
 
       <div className="md:flex ">
@@ -185,6 +195,7 @@ function PackageDetails(props) {
                         <div className="ml-5 my-2">
                           {index + 1}. {"  "}
                           {term}
+                          {/* <br /> */}
                         </div>
                       </span>
                     )
@@ -200,6 +211,7 @@ function PackageDetails(props) {
                         <div className="ml-5 my-2">
                           {index + 1}. {"  "}
                           {condition}
+                          {/* <br /> */}
                         </div>
                       </span>
                     )
