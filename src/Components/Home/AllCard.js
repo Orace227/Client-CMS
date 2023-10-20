@@ -74,7 +74,7 @@ const AllCard = (props) => {
           {packages.slice(0, numPackagesToShow).map((card) => (
             <Grid item xs={12} sm={6} md={4} lg={3} key={card._id} className="">
               <Card
-                className="mt-4 ml-5 mr-5 sm:ml-2 sm:mr-2 "
+                className="mt-4 ml-5 mr-3 sm:ml-2 sm:mr-2 "
                 style={{
                   boxShadow: "0 4px 10px rgba(0, 0, 0, 0.2)",
                   width: "auto",
@@ -83,7 +83,7 @@ const AllCard = (props) => {
               >
                 <Link to={`/Package/${card.PackageId}`} className="">
                   <CardMedia
-                    style={{ height: "200px" }}
+                    style={{ height: "170px" }}
                     component="img"
                     alt={card.packageName}
                     image={card.packageImgPath}

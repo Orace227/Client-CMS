@@ -9,7 +9,6 @@ export default function PackagePage() {
     <>
       <NavBar />
       <PackageDetails packageId={packageId} />
-
       <Footer />
     </>
   );

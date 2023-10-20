@@ -49,7 +49,7 @@ function Contact() {
   }, [isVisible]);
   return (
     <div className={`box ${isVisible ? "visible" : ""}`}>
-      <div
+      {/* <div
         className="Page1 mx-6 lg:mx-20 flex flex-col justify-center  gap-6 "
         name="scroll-target"
       >
@@ -105,9 +105,9 @@ function Contact() {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
 
-      <div className="my-[9%]  lg:hidden  lg:mt-[15%] xl:mt-[11%] 2xl:w-[55%] ">
+      <div className="my-[9%]  hidden  lg:mt-[15%] xl:mt-[11%] 2xl:w-[55%] ">
         <div className="flex justify-center  ">
           <img
             src={Traveller}
@@ -317,7 +317,7 @@ function Contact() {
           </div>
         </div>
 
-        <div className="flex flex-col p-5 md:grid md:grid-cols-2 justify-center text-[2.8vw] sm:text-[2.7vw] md:text-[2.6vw] lg:text-[2vw] xl:text-[1.1vw] mt-[-22px] sm:mt-10  xl:m-auto">
+        {/* <div className="flex flex-col p-5 md:grid md:grid-cols-2 justify-center text-[2.8vw] sm:text-[2.7vw] md:text-[2.6vw] lg:text-[2vw] xl:text-[1.1vw] mt-[-22px] sm:mt-10  xl:m-auto">
           <div className="text-white flex items-center my-1 mb-2 sm:mb-5 md:mb-10">
             <img
               src={Hours}
@@ -361,7 +361,7 @@ function Contact() {
               Saturday: 10:00 AM - 4:00 PM (Local Time)
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   );

@@ -16,7 +16,7 @@ function NavList() {
         as="li"
         variant="large"
         color="blue-gray"
-        className="p-2 font-bold text-lg transition transform   rounded-lg lg:hover:scale-105 hover:shadow-lg"
+        className="p-2 font-bold text-lg transition transform  hover:text-blue-900 "
       >
         <Link to="/" className="flex items-center transition-colors">
           Home
@@ -26,7 +26,7 @@ function NavList() {
         as="li"
         variant="large"
         color="blue-gray"
-        className="p-2 font-bold text-lg transition transform  rounded-lg lg:hover:scale-105 hover:shadow-lg"
+        className="p-2 font-bold text-lg hover:text-blue-900"
       >
         <Link to="/Countries" className="flex items-center transition-colors">
           Destinations
@@ -36,7 +36,7 @@ function NavList() {
         as="li"
         variant="large"
         color="blue-gray"
-        className="p-2 font-bold text-lg transition transform  rounded-lg lg:hover:scale-105 hover:shadow-lg"
+        className="p-2 font-bold text-lg hover:text-blue-900"
       >
         <Link to="/AboutUs" className="flex items-center transition-colors">
           About Us
@@ -46,7 +46,7 @@ function NavList() {
         as="li"
         variant="large"
         color="blue-gray"
-        className="p-2 font-bold text-lg transition transform  rounded-lg lg:hover:scale-105 hover:shadow-lg"
+        className="p-2 font-bold text-lg hover:text-blue-900"
       >
         <Link to="/ContactUs" className="flex items-center transition-colors">
           Contact Us
