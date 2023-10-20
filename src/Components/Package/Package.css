@@ -222,3 +222,7 @@ PackageDetails.css
 .content *{
   color: #ffffff;
 }
+
+body{
+  overflow-x: hidden;
+}
