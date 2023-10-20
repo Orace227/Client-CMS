@@ -150,76 +150,8 @@ function PackageDetails(props) {
             </div>
           </section>
 
-          <section>
-            <div
-              className={`section-container ${hoverDiv === 1 ? "active" : ""}`}
-            >
-              <div className="content">
-                <h3 className="text-3xl mb-3">Inclusions</h3>
-                <p>
-                  {Package[0]?.packageBody?.inclusionsAndExclusions?.inclusions.map(
-                    (inclusion, index) => (
-                      <span key={index}>
-                        <div className="ml-5  font-thin">
-                          {index + 1}. {inclusion}
-                        </div>
-                      </span>
-                    )
-                  )}
-                </p>
-                <h3 className="text-3xl mt-5 mb-3">Exclusions</h3>
-                <p>
-                  {Package[0]?.packageBody?.inclusionsAndExclusions?.exclusions.map(
-                    (exclusion, index) => (
-                      <span key={index}>
-                        <div className="ml-5">
-                          {index + 1}. {exclusion}
-                        </div>
-                      </span>
-                    )
-                  )}
-                </p>
-              </div>
-            </div>
-          </section>
-          <section>
-            <div
-              className={`section-container ${hoverDiv === 2 ? "active" : ""}`}
-            >
-              <div className="content">
-                <h3 className="text-3xl mb-3">Terms</h3>
-                <p>
-                  {Package[0]?.packageBody?.termsAndConditions?.terms.map(
-                    (term, index) => (
-                      <span key={index}>
-                        <div className="ml-5 my-2">
-                          {index + 1}. {"  "}
-                          {term}
-                          {/* <br /> */}
-                        </div>
-                      </span>
-                    )
-                  )}
-                </p>
-
-                <h3 className="text-3xl mt-7 mb-3">Conditions</h3>
-
-                <p>
-                  {Package[0]?.packageBody?.termsAndConditions?.conditions.map(
-                    (condition, index) => (
-                      <span key={index}>
-                        <div className="ml-5 my-2">
-                          {index + 1}. {"  "}
-                          {condition}
-                          {/* <br /> */}
-                        </div>
-                      </span>
-                    )
-                  )}
-                </p>
-              </div>
-            </div>
-          </section>
+          <section></section>
+          <section></section>
           <section className=" xl:hidden">
             <div
               className={`section-container section-container-Inquiry ${
