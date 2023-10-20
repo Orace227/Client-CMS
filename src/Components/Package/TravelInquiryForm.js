@@ -53,7 +53,11 @@ const TravelInquiryForm = (props) => {
 
   return (
     <div className="">
-      <Typography variant="h4" style={{ color: "black",marginTop:"10px" }} gutterBottom>
+      <Typography
+        variant="h4"
+        style={{ color: "black", marginTop: "10px" }}
+        gutterBottom
+      >
         Travel Inquiry Form
       </Typography>
       <Formik
@@ -88,7 +92,7 @@ const TravelInquiryForm = (props) => {
                 <ErrorMessage
                   name="fullName"
                   component="div"
-                  className="error"
+                  className="error text-sm font-normal"
                   style={{ color: "red" }}
                 />
               </Grid>
@@ -106,7 +110,7 @@ const TravelInquiryForm = (props) => {
                   name="mobile"
                   style={{ color: "red" }}
                   component="div"
-                  className="error"
+                  className="error text-sm font-normal"
                 />
               </Grid>
 
@@ -123,7 +127,7 @@ const TravelInquiryForm = (props) => {
                   name="email"
                   style={{ color: "red" }}
                   component="div"
-                  className="error"
+                  className="error text-sm font-normal"
                 />
               </Grid>
 
@@ -154,7 +158,7 @@ const TravelInquiryForm = (props) => {
                 <ErrorMessage
                   name="likelyTravelDate"
                   component="div"
-                  className="error"
+                  className="error  text-sm font-normal"
                   style={{ color: "red" }}
                 />
               </Grid>
@@ -172,7 +176,7 @@ const TravelInquiryForm = (props) => {
                 <ErrorMessage
                   name="numberOfAdults"
                   component="div"
-                  className="error"
+                  className="error text-sm font-normal"
                   style={{ color: "red" }}
                 />
               </Grid>
@@ -227,7 +231,7 @@ const TravelInquiryForm = (props) => {
                 <ErrorMessage
                   name="message"
                   component="div"
-                  className="error"
+                  className="error text-sm font-normal"
                   style={{ color: "red" }}
                 />
               </Grid>
