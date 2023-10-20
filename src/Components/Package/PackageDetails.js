@@ -23,9 +23,16 @@ function PackageDetails(props) {
     try {
       const res = await axios.get(`/GetPackages?PackageId=${props.packageId}`);
       console.log("package data", res.data);
+      // const PackageData = res.data.allPackages.map((packageItem) => ({
+      //   ...packageItem,
+      //   packageImgPath: `http://localhost:7000/${packageItem.packageImgPath.replace(
+      //     "\\",
+      //     "/"
+      //   )}`,
+      // }));
       const PackageData = res.data.allPackages.map((packageItem) => ({
         ...packageItem,
-        packageImgPath: `http://localhost:7000/${packageItem.packageImgPath.replace(
+        packageImgPath: `https://travelling-cms-backend.onrender.com/${packageItem.packageImgPath.replace(
           "\\",
           "/"
         )}`,
