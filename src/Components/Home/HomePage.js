@@ -18,13 +18,14 @@ export default function HomePage() {
       <AllCard packageType="Wellness Resorts" title="Wellness Resorts" />
       <AllCard packageType="Cruise Vacations" title="Cruise Vacations" />
 
-      <WhyChooseUs />
+      {/* <WhyChooseUs /> */}
       <AllCard packageType="Wildlife Drives" title="Wildlife Drives" />
       <AllCard packageType="Sustainable paths" title="Sustainable Paths" />
       <AllCard packageType="Leisure" title="Leisure" />
-      <WeOffer />
-      <ClientLogos />
-      <Testimonials />
+      
+      {/* <WeOffer /> */}
+      {/* <ClientLogos /> */}
+      {/* <Testimonials /> */}
       <Footer />
     </>
   );

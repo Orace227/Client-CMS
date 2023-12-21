@@ -40,7 +40,7 @@ const AllCard = (props) => {
   const numPackagesToShow = 4;
 
   return (
-    <div className="flex mt-16 flex-wrap md:ml-16 md:mr-16">
+    <div className="flex mt-16 flex-wrap md:ml-16 md:mr-16 mb-10">
       <div className="w-full flex">
         <div className="w-[300px]">
           <div className="ml-3 w-[160%] text-3xl md:text-4xl flex justify-start font-bold">
