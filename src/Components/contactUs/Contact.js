@@ -154,7 +154,7 @@ function Contact() {
                 className="h-[23px] mx-1 bg-[#F4F4F4]"
               />
               <p className="text-[3.7vw] flex  items-center mb-3  min-[550px]:text-[3.3vw]  min-[700px]:text-[3vw] min-[850px]:text-[2.2vw] min-[1024px]:text-[1.2vw] lg:text-[1.2vw] 2xl:text-[1.1vw]  font-semibold">
-                Phone: +1-800-123-4567
+                Phone: +91 7600014939
               </p>
             </div>
             <div className="flex items-center">

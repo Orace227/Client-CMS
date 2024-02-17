@@ -9,6 +9,7 @@ import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import logo from "../Assests/Logo1.png";
 import logo2Text from "../Assests/logo2Text.png";
 import { Link } from "react-router-dom";
+import SearchBar from "./SearchBar";
 function NavList() {
   return (
     <ul className="my-2 flex flex-col gap-2 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6">
@@ -86,8 +87,9 @@ export default function NavBar(props) {
               style={{ height: "35px", marginTop: "10px" }}
             />
           </Typography>
-          <div className="hidden lg:block">
+          <div className="hidden lg:flex">
             <NavList />
+            <SearchBar />
           </div>
 
           <IconButton
@@ -105,6 +107,7 @@ export default function NavBar(props) {
         </div>
         <Collapse open={openNav}>
           <NavList />
+          <SearchBar />
         </Collapse>
       </Navbar>
       {props.border == "true" && <hr />}

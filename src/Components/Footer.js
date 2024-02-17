@@ -45,7 +45,7 @@ export default function Footer() {
             507, Chimanlal Girdharlal Rd, opp. Lords Eco Inn Hotel, Eventi,
             Navrangpura, Ahmedabad, Gujarat 380009
           </h1>
-          <h1 className="mt-2 text-black">+91 07600014939</h1>
+          <h1 className="mt-2 text-black">+91 7600014939</h1>
         </div>
       </div>
       <div className="mt-4 md:mt-10 w-full mx-auto border-t border-black py-4 relative top-4">
