@@ -275,9 +275,10 @@ function Contact() {
             </div>
             <div className="flex">
               <img src={Location} alt="" srcset="" className="h-[20px] " />
-              <p className="text-[3.6vw] mb-3  min-[550px]:text-[3.3vw]  min-[700px]:text-[2.9vw] min-[850px]:text-[2.2vw] min-[1024px]:text-[1.9vw] lg:text-[1.1vw] xl:text-[1.2vw] 2xl:text-[1vw] font-semibold">
-                Address: 123 Adventure Avenue,
-                <br /> Traveler's Haven, World <br /> Wanderland
+              <p className="ml-1 text-[3.6vw] mb-3  min-[550px]:text-[3.3vw]  min-[700px]:text-[2.9vw] min-[850px]:text-[2.2vw] min-[1024px]:text-[1.9vw] lg:text-[1.1vw] xl:text-[1.2vw] 2xl:text-[1vw] font-semibold">
+                507, Chimanlal Girdharlal Rd, opp, Eventi,
+                <br /> Lords Eco Inn Hotel, Navrangpura, <br />
+                Ahmedabad Gujarat 380009
               </p>
             </div>
             <div className="flex items-center">

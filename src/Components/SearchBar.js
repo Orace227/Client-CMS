@@ -51,7 +51,7 @@ const SearchBar = () => {
         <input
           type="text"
           className="p-2 ml-4 mt-[2px] rounded-lg"
-          placeholder="Search..."
+          placeholder="search"
           value={searchTerm}
           onChange={handleInputChange}
           onClick={() => setIsDropdownOpen(!isDropdownOpen)}

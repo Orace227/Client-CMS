@@ -74,11 +74,11 @@ function About() {
               <h1 className="up2 ">Blue Escape?</h1>
             </div>
             <div className="text-[5vw] lg:text-[2vw] text-[#183c83] font-semibold  lg:w-[550px]">
-              <p className="typewriter">
+              {/* <p className="typewriter">
                 Welcome,<span className="typewriter1"></span>
-              </p>
-              <p className="animated-text ">
-                to the world of Blue Escape Holidays, where we transform your
+              </p> */}
+              <p className="animated-text text-2xl">
+                To the world of Blue Escape Holidays, where we transform your
                 travel dreams into unforgettable realities.
               </p>
             </div>
