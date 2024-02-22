@@ -61,7 +61,7 @@ const SearchBar = () => {
             {filteredOptionsArr.map((option, index) => (
               <Link
                 key={index}
-                to={`http://localhost:3000/Package/${option.PackageId}`}
+                to={`https://blueescapeholidays.com/Package/${option.PackageId}`}
               >
                 <li
                   className="p-2 cursor-pointer hover:bg-gray-200"

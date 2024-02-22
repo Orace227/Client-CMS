@@ -20,13 +20,21 @@ const PackageOfCountry = (props) => {
       //     "/"
       //   )}`,
       // }));
+      // const allPackages = response.data.allPackages.map((Package) => ({
+      //   ...Package,
+      //   packageImgPath: `https://travelling-cms-backend.onrender.com/${Package.packageImgPath.replace(
+      //     "\\",
+      //     "/"
+      //   )}`,
+      // }));
       const allPackages = response.data.allPackages.map((Package) => ({
         ...Package,
-        packageImgPath: `https://travelling-cms-backend.onrender.com/${Package.packageImgPath.replace(
+        packageImgPath: `https://blueescapeholidays.com/${Package.packageImgPath.replace(
           "\\",
           "/"
         )}`,
       }));
+      
       setPackages(allPackages);
     } catch (error) {
       setError("Error fetching packages.");

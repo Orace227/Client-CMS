@@ -19,10 +19,16 @@ const Packages = () => {
 
       const allCountries = response.data.allCountries?.map((country) => ({
         ...country,
-        countryImgPath: `https://travelling-cms-backend.onrender.com/${country.countryImgPath
+        countryImgPath: `https://blueescapeholidays.com/${country.countryImgPath
           .replace("\\", "/")
           .replace(/\s+/g, "")}`,
       }));
+      // const allCountries = response.data.allCountries?.map((country) => ({
+      //   ...country,
+      //   countryImgPath: `https://travelling-cms-backend.onrender.com/${country.countryImgPath
+      //     .replace("\\", "/")
+      //     .replace(/\s+/g, "")}`,
+      // }));
       // Sort the countries alphabetically by name
       const sortedCountries = allCountries.sort((a, b) => {
         return a.countryName.localeCompare(b.countryName);
