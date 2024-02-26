@@ -27,9 +27,16 @@ const Accordion = (props) => {
       //   )}`,
       // }));
 
+      // const PackageData = res.data.allPackages.map((packageItem) => ({
+      //   ...packageItem,
+      //   packageImgPath: `https://travelling-cms-backend.onrender.com/${packageItem.packageImgPath.replace(
+      //     "\\",
+      //     "/"
+      //   )}`,
+      // }));
       const PackageData = res.data.allPackages.map((packageItem) => ({
         ...packageItem,
-        packageImgPath: `https://travelling-cms-backend.onrender.com/${packageItem.packageImgPath.replace(
+        packageImgPath: `https://admin.blueescapeholidays.com/api/${packageItem.packageImgPath.replace(
           "\\",
           "/"
         )}`,
