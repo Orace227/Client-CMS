@@ -19,7 +19,7 @@ const Packages = () => {
 
       const allCountries = response.data.allCountries?.map((country) => ({
         ...country,
-        countryImgPath: `https://blueescapeholidays.com/${country.countryImgPath
+        countryImgPath: `https://admin.blueescapeholidays.com/api/${country.countryImgPath
           .replace("\\", "/")
           .replace(/\s+/g, "")}`,
       }));
