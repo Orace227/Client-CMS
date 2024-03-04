@@ -34,7 +34,7 @@ function PackageDetails(props) {
 
       const PackageData = res.data.allPackages.map((packageItem) => ({
         ...packageItem,
-        packageImgPath: `https://blueescapeholidays.com/${packageItem.packageImgPath.replace(
+        packageImgPath: `https://admin.blueescapeholidays.com/api/${packageItem.packageImgPath.replace(
           "\\",
           "/"
         )}`,

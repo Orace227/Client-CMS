@@ -29,12 +29,12 @@ const PackageOfCountry = (props) => {
       // }));
       const allPackages = response.data.allPackages.map((Package) => ({
         ...Package,
-        packageImgPath: `https://blueescapeholidays.com/${Package.packageImgPath.replace(
+        packageImgPath: `https://admin.blueescapeholidays.com/api/${Package.packageImgPath.replace(
           "\\",
           "/"
         )}`,
       }));
-      
+
       setPackages(allPackages);
     } catch (error) {
       setError("Error fetching packages.");
